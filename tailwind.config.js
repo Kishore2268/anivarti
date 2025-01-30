@@ -8,20 +8,20 @@ module.exports = {
       screens: {
         '3xl': '1920px', // Add a 3xl breakpoint
       },
+      //custom colors
       colors: {
-        yellow: {
-          200: "#D8E28C", //custom lime yellow color
-        },
-        blue: {
-          950: "#14202E", //custom navy blue color
-        },
+        darkBlue: '#0A192F',
+        skyBlue: '#5DADE2',
+        electricBlue: '#00DEFC',
+        darkGray: '#1C1C1E',
+        lightGray: '#F2F2F2',
       },
       
       //custom font family
       fontFamily: {
-        sans: ['Inter', 'Arial', 'sans-serif'],
+        sans: ['Urbanist', 'sans-serif'],
       },
-
+      
       //custom heights
       height: {
         80: '20rem', 
