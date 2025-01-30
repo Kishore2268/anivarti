@@ -231,11 +231,11 @@ const HomePage = () => {
       <hr className="w-[75%] mx-auto border-gray-700" />
 
       {/* Why Choose Us Section */}
-      <section className="w-[95%] lg:w-[80%] mx-auto py-16">
+      <section className="w-[95%] lg:w-[95%] mx-auto py-16">
         <h1 className="text-lg lg:text-3xl text-electricBlue font-light tracking-[3px] text-center">
           Why Choose Anivarti for Your E-Commerce Management Needs?
         </h1>
-        <p className="mt-4 w-[100%] mx-auto text-md lg:text-lg text-start tracking-[1px] text-gray-200">
+        <p className="mt-4 w-[90%] lg:w-[80%] mx-auto text-md lg:text-lg text-start tracking-[1px] text-gray-200">
           With expert teams, customized strategies, cutting-edge technology, and
           a proven track record of driving success, we make it easy to scale
           your online business. Let us help you achieve rapid growth—connect
@@ -248,7 +248,7 @@ const HomePage = () => {
             <h3 className="text-white mt-4 text-xl tracking-[3px] font-semibold">
               Quick Support When You Need
             </h3>
-            <p className="mt-2 text-gray-500 text-md lg:text-lg text-start">
+            <p className="mt-2 text-gray-300 text-md lg:text-lg text-start">
               Our team ensures prompt and reliable assistance, so your store
               operates seamlessly and stays ahead of the competition.
             </p>
@@ -259,7 +259,7 @@ const HomePage = () => {
             <h3 className="text-white mt-4 text-xl tracking-[3px] font-semibold">
               Drive Innovation Forward
             </h3>
-            <p className="mt-2 text-gray-500 text-md lg:text-lg text-start">
+            <p className="mt-2 text-gray-300 text-md lg:text-lg text-start">
               At Anivarti, innovation is at our core. We provide solutions that
               transform challenges into opportunities, helping your business
               stay ahead in the dynamic eCommerce space.
@@ -271,7 +271,7 @@ const HomePage = () => {
             <h3 className="text-white mt-4 text-xl tracking-[3px] font-semibold">
               Robust Security & Superior Performance
             </h3>
-            <p className="mt-2 text-gray-500 text-md lg:text-lg text-start">
+            <p className="mt-2 text-gray-300 text-md lg:text-lg text-start">
               Your store's safety is our priority. We implement strong security
               measures while optimizing performance to deliver an unmatched
               experience.
@@ -279,11 +279,11 @@ const HomePage = () => {
           </div>
           {/* Card 4 */}
           <div className="bg-darkBlue p-6 border border-gray-300 shadow-lg rounded-lg">
-            <FaSearch className="text-3xl text-electricBlue mx-auto" />
+            <FaSearch className="text-5xl text-electricBlue mx-auto" />
             <h3 className="text-white mt-4 text-xl tracking-[3px] font-semibold">
               Expand Your Reach
             </h3>
-            <p className="mt-2 text-gray-500 text-md lg:text-lg text-start">
+            <p className="mt-2 text-gray-300 text-md lg:text-lg text-start">
               Unlock new opportunities with Anivarti. We help you explore
               untapped markets and expand across platforms, growing your online
               presence effortlessly.
@@ -307,7 +307,7 @@ const HomePage = () => {
           allowing you to focus on scaling your brand confidently.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
+        <div className="grid md:grid-cols-3 gap-8 mx-auto px-4">
           {/* Card 1 */}
           <div className="bg-white p-6 rounded-lg shadow-md relative">
             <div className="absolute top-2 left-2 bg-darkBlue text-electricBlue rounded-full w-12 h-12 flex items-center justify-center">
@@ -438,7 +438,7 @@ const HomePage = () => {
           platform, and launch fast with our secure, high-performance solutions.
         </p>
 
-        <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto px-4">
+        <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 max-w-7xl mx-auto px-4">
           {/* Card 1 - Market Trend Analysis */}
           <div className="relative p-6 rounded-lg shadow-md flex flex-col items-center text-center  border border-gray-300">
             <FaChartLine className="text-electricBlue text-4xl mb-4" />
@@ -553,7 +553,7 @@ const HomePage = () => {
           sustainable growth.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-12 max-w-7xl mx-auto px-4">
           {/* Solution Cards */}
           <div className=" p-6 rounded-lg shadow-md flex flex-col items-center  border border-gray-300">
             <FaShoppingCart className="text-4xl text-electricBlue" />
