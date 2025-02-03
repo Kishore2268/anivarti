@@ -67,7 +67,7 @@ const HomePage = () => {
 
       {/* Services Section */}
       <section className="bg-gray-100 py-16 mt-4 w-[100%] mx-auto">
-        <div className="container mx-auto text-center">
+        <div className="w-[95%] lg:w-[90%] container mx-auto text-center">
           {/* Our Services Heading */}
           <h1 className="px-6 py-3 text-2xl lg:text-3xl text-electricBlue rounded-md font-light tracking-[5px] inline-block mb-2 lg:mb-4">
             OUR SERVICES
@@ -196,7 +196,7 @@ const HomePage = () => {
 
       {/* Expert Solutions Section */}
       <section className="bg-gray-100 py-8">
-        <div className="container mx-auto flex flex-col lg:flex-row items-center">
+        <div className="w-[95%] lg:w-[90%] container mx-auto flex flex-col lg:flex-row items-center">
           <div className="w-[85%] lg:w-1/2">
             <h1 className="text-lg lg:text-3xl text-electricBlue font-light tracking-[3px] text-center">
               Expert Solutions for E-Commerce Management
@@ -237,10 +237,10 @@ const HomePage = () => {
           {/* Card 1 */}
           <div className="bg-white p-6 border border-gray-100 shadow-lg rounded-lg">
             <AiOutlineUser className="text-5xl text-electricBlue mx-auto" />
-            <h3 className="text-gray-600 mt-4 text-xl tracking-[3px] font-semibold">
+            <h3 className="text-gray-700 mt-4 text-xl tracking-[3px]">
               Quick Support When You Need
             </h3>
-            <p className="mt-2 text-gray-600 text-md lg:text-lg text-start">
+            <p className="mt-2 text-gray-500 text-md lg:text-lg text-start">
               Our team ensures prompt and reliable assistance, so your store
               operates seamlessly and stays ahead of the competition.
             </p>
@@ -248,10 +248,10 @@ const HomePage = () => {
           {/* Card 2 */}
           <div className="bg-white p-6 border border-gray-300 shadow-lg  rounded-lg">
             <FaBullhorn className="text-5xl text-electricBlue mx-auto" />
-            <h3 className="text-gray-600 mt-4 text-xl tracking-[3px] font-semibold">
+            <h3 className="text-gray-700 mt-4 text-xl tracking-[3px]">
               Drive Innovation Forward
             </h3>
-            <p className="mt-2 text-gray-600 text-md lg:text-lg text-start">
+            <p className="mt-2 text-gray-500 text-md lg:text-lg text-start">
               At Anivarti, innovation is at our core. We provide solutions that
               transform challenges into opportunities, helping your business
               stay ahead in the dynamic eCommerce space.
@@ -260,10 +260,10 @@ const HomePage = () => {
           {/* Card 3 */}
           <div className="bg-white p-6 border border-gray-300 shadow-lg  rounded-lg">
             <FaShieldAlt className="text-5xl text-electricBlue mx-auto" />
-            <h3 className="text-gray-600 mt-4 text-xl tracking-[3px] font-semibold">
+            <h3 className="text-gray-700 mt-4 text-xl tracking-[3px] ">
               Robust Security & Superior Performance
             </h3>
-            <p className="mt-2 text-gray-600 text-md lg:text-lg text-start">
+            <p className="mt-2 text-gray-500 text-md lg:text-lg text-start">
               Your store's safety is our priority. We implement strong security
               measures while optimizing performance to deliver an unmatched
               experience.
@@ -272,10 +272,10 @@ const HomePage = () => {
           {/* Card 4 */}
           <div className="bg-white p-6 border border-gray-300 shadow-lg rounded-lg">
             <FaSearch className="text-5xl text-electricBlue mx-auto" />
-            <h3 className="text-gray-600 mt-4 text-xl tracking-[3px] font-semibold">
+            <h3 className="text-gray-700 mt-4 text-xl tracking-[3px]">
               Expand Your Reach
             </h3>
-            <p className="mt-2 text-gray-600 text-md lg:text-lg text-start">
+            <p className="mt-2 text-gray-500 text-md lg:text-lg text-start">
               Unlock new opportunities with Anivarti. We help you explore
               untapped markets and expand across platforms, growing your online
               presence effortlessly.
@@ -297,7 +297,7 @@ const HomePage = () => {
           allowing you to focus on scaling your brand confidently.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-8 mx-auto px-4">
+        <div className="w-[95%] lg:w-[90%] grid md:grid-cols-3 gap-8 mx-auto px-4">
           {/* Card 1 */}
           <div className="bg-white p-6 rounded-lg shadow-md relative">
             <div className="absolute top-2 left-2 text-xl text-gray-700 rounded-full w-12 h-12 flex items-center justify-center">
@@ -309,7 +309,7 @@ const HomePage = () => {
             <h3 className="text-lg lg:text-xl tracking-[3px] font-semibold text-gray-700 mb-2">
               Product Image Optimization
             </h3>
-            <p className="text-gray-500 text-md lg:text-lg text-start">
+            <p className="text-gray-500 text-sm lg:text-md tracking-[1px] text-start">
               We ensure your product images are high-quality, visually
               appealing, and fast-loading to captivate customers instantly.
               Optimized images not only enhance the shopping experience but also
@@ -329,7 +329,7 @@ const HomePage = () => {
             <h3 className="text-lg lg:text-xl tracking-[3px] font-semibold text-gray-700 mb-2">
               Seamless Order Processing
             </h3>
-            <p className="text-gray-500 text-md lg:text-lg text-start">
+            <p className="text-gray-500 text-sm lg:text-md tracking-[1px] text-start">
               Our end-to-end order management system handles every step, from
               order placement to timely delivery. We eliminate delays and
               streamline the process, ensuring a smooth and hassle-free
@@ -348,7 +348,7 @@ const HomePage = () => {
             <h3 className="text-lg lg:text-xl tracking-[3px] font-semibold text-gray-700 mb-2">
               Inventory Optimization
             </h3>
-            <p className="text-gray-500 text-md lg:text-lg text-start">
+            <p className="text-gray-500 text-sm lg:text-md tracking-[1px] text-start">
               We help you track, manage, and forecast inventory with precision
               to prevent stockouts and overstocking. This ensures optimal
               product availability, enhances customer satisfaction, and reduces
@@ -367,7 +367,7 @@ const HomePage = () => {
             <h3 className="text-lg lg:text-xl tracking-[3px] font-semibold text-gray-700 mb-2">
               Customer Support Excellence
             </h3>
-            <p className="text-gray-500 text-md lg:text-lg text-start">
+            <p className="text-gray-500 text-sm lg:text-md tracking-[1px] text-start">
               Our 24/7 customer support team delivers prompt and effective
               assistance to resolve queries and issues. By ensuring exceptional
               support, we boost customer satisfaction, retention, and overall
@@ -386,7 +386,7 @@ const HomePage = () => {
             <h3 className="text-lg lg:text-xl tracking-[3px] font-semibold text-gray-700 mb-2">
               Technical Support
             </h3>
-            <p className="text-gray-500 text-md lg:text-lg text-start">
+            <p className="text-gray-500 text-sm lg:text-md tracking-[1px] text-start">
               Our robust technical support solutions keep your platform secure,
               scalable, and high-performing. We focus on maintaining seamless
               operations with reliable tech services, minimizing downtime, and
@@ -405,7 +405,7 @@ const HomePage = () => {
             <h3 className="text-lg lg:text-xl tracking-[3px] font-semibold text-gray-700 mb-2">
               Maximize Your Growth Potential
             </h3>
-            <p className="text-gray-500 text-md lg:text-lg text-start">
+            <p className="text-gray-500 text-sm lg:text-md tracking-[1px] text-start">
               By handling the backend processes like order fulfillment,
               inventory management, and platform operations, we empower you to
               focus on growth. Our support allows you to prioritize customer
@@ -660,7 +660,7 @@ const HomePage = () => {
               <h3 className="text-xl font-semibold text-gray-800 tracking-[3px]">
                 {platform.platform}
               </h3>
-              <p className="text-md lg:text-lg text-gray-700 mt-2 text-start">
+              <p className="text-sm lg:text-md text-gray-700 mt-2 text-start tracking-[1px]">
                 {platform.description}
               </p>
             </div>
