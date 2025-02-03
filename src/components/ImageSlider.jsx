@@ -7,7 +7,7 @@ const ImageSlider = ({ images, currentIndex, setCurrentIndex, sectionIds }) => {
     if (sectionIds[currentIndex]) {
       const sectionElement = document.getElementById(sectionIds[currentIndex]);
       if (sectionElement) {
-        sectionElement.scrollIntoView({ behavior: "smooth", block: "start" });
+        sectionElement.scrollIntoView({ behavior: "smooth", });
       }
     }
   }, [currentIndex]);
