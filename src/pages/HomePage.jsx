@@ -39,17 +39,14 @@ const HomePage = () => {
   return (
     <div>
       {/* Banner Section */}
-      <section className="h-screen  bg-black flex justify-center items-center mt-16">
+      <section className="h-screen  bg-white flex justify-center items-center mt-16">
         <div className="flex flex-col lg:flex-row justify-between items-center w-[95%] lg:w-[85%] px-4">
           <div className="w-full lg:w-1/2 text-left">
-            <h1 className="text-2xl lg:text-5xl font-bold text-sky-400 text-center tracking-[5px]">
+            <h1 className="text-2xl lg:text-5xl font-bold text-electricBlue text-center tracking-[5px]">
               WE'RE ANIVARTI
             </h1>
-            <p className="mt-4 text-md lg:text-2xl text-gray-200">
-              Anivarti is a digital business enabler offering eCommerce
-              solutions such as image optimization, inventory management, order
-              processing, customer support and more... We streamline your
-              operations, so you can focus on scaling your business.
+            <p className="mt-4 text-md lg:text-2xl text-gray-700">
+            Anivarti is a digital Business enabler that helps businesses of all sizes grow online. We offer a wide range of services
             </p>
             <button className="text-gray-700 bg-electricBlue px-6 py-2 text-md lg:text-lg mt-6 mx-auto flex items-center justify-center">
               Explore More About Us
@@ -67,82 +64,81 @@ const HomePage = () => {
         </div>
       </section>
 
-      <hr className="w-[75%] mx-auto border-gray-700" />
 
       {/* Services Section */}
-      <section className="py-16 mt-4 w-[90%] mx-auto">
+      <section className="bg-gray-100 py-16 mt-4 w-[100%] mx-auto">
         <div className="container mx-auto text-center">
           {/* Our Services Heading */}
-          <h1 className="px-6 py-3 text-2xl lg:text-3xl text-sky-400 rounded-md font-light tracking-[5px] inline-block mb-2 lg:mb-4">
+          <h1 className="px-6 py-3 text-2xl lg:text-3xl text-electricBlue rounded-md font-light tracking-[5px] inline-block mb-2 lg:mb-4">
             OUR SERVICES
           </h1>
-          <p className="text-md lg:text-xl text-gray-200 mb-12 tracking-[1px] text-center">
+          <p className="text-md lg:text-xl text-gray-700 mb-12 tracking-[1px] text-center">
             We provide comprehensive solutions to help businesses thrive in the
             digital world, from e-commerce management to logistics and branding.
           </p>
           <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
             {/* Service 1 */}
-            <div className="bg-darkBlue p-8 rounded-lg text-center shadow-lg border border-gray-200 transition duration-300 hover:scale-105 hover:shadow-xl hover:border-2 hover:border-electricBlue">
+            <div className="bg-white p-8 rounded-lg text-center shadow-lg border border-gray-200 transition duration-300 hover:scale-105 hover:shadow-xl hover:border-2 hover:border-electricBlue">
               <FaShoppingCart className="text-electricBlue text-3xl lg:text-5xl mx-auto" />
-              <h1 className="mt-4 text-lg lg:text-2xl font-light text-white tracking-[3px]">
+              <h1 className="mt-4 text-lg lg:text-2xl font-light text-gray-600 tracking-[3px]">
                 E-COMMERCE
               </h1>
-              <p className="mt-2 text-md lg:text-lg text-gray-400 text-start">
+              <p className="mt-2 text-md lg:text-lg text-gray-600 text-start">
                 Comprehensive services for marketplace onboarding and seller
                 portal management to maximize ROI.
               </p>
             </div>
             {/* Service 2 */}
-            <div className="bg-darkBlue p-8 rounded-lg text-center shadow-lg border border-gray-200 transition duration-300 hover:scale-105 hover:shadow-xl hover:border-2  hover:border-electricBlue">
+            <div className="bg-white p-8 rounded-lg text-center shadow-lg border border-gray-200 transition duration-300 hover:scale-105 hover:shadow-xl hover:border-2  hover:border-electricBlue">
               <FaBullhorn className="text-electricBlue text-3xl lg:text-5xl mx-auto" />
-              <h1 className="mt-4 text-lg lg:text-2xl font-light text-white tracking-[3px]">
+              <h1 className="mt-4 text-lg lg:text-2xl font-light text-gray-600 tracking-[3px]">
                 BRANDING & MARKETING
               </h1>
-              <p className="mt-2 text-md lg:text-lg text-gray-400 text-start">
+              <p className="mt-2 text-md lg:text-lg text-gray-600 text-start">
                 Developing strategies to boost brand value and manage ad
                 campaigns for maximizing ROAS.
               </p>
             </div>
             {/* Service 3 */}
-            <div className="bg-darkBlue p-8 rounded-lg text-center shadow-lg border border-gray-200 transition duration-300 hover:scale-105 hover:shadow-xl hover:border-2  hover:border-electricBlue">
+            <div className="bg-white p-8 rounded-lg text-center shadow-lg border border-gray-200 transition duration-300 hover:scale-105 hover:shadow-xl hover:border-2  hover:border-electricBlue">
               <FaCreditCard className="text-electricBlue text-3xl lg:text-5xl mx-auto" />
-              <h1 className="mt-4 text-lg lg:text-2xl font-light text-white tracking-[3px]">
+              <h1 className="mt-4 text-lg lg:text-2xl font-light text-gray-600 tracking-[3px]">
                 PAYMENT
               </h1>
-              <p className="mt-2 text-md lg:text-lg text-gray-400 text-start">
+              <p className="mt-2 text-md lg:text-lg text-gray-600 text-start">
                 Integrating top-tier payment gateways to ensure smooth
                 transactions and prevent lost sales.
               </p>
             </div>
             {/* Service 4 */}
-            <div className="bg-darkBlue p-8 rounded-lg text-center shadow-lg border border-gray-200 transition duration-300 hover:scale-105 hover:shadow-xl hover:border-2  hover:border-electricBlue">
+            <div className="bg-white p-8 rounded-lg text-center shadow-lg border border-gray-200 transition duration-300 hover:scale-105 hover:shadow-xl hover:border-2  hover:border-electricBlue">
               <FaTruckMoving className="text-electricBlue text-3xl lg:text-5xl mx-auto" />
-              <h1 className="mt-4 text-lg lg:text-2xl font-light text-white tracking-[3px]">
+              <h1 className="mt-4 text-lg lg:text-2xl font-light text-gray-600 tracking-[3px]">
                 LOGISTICS
               </h1>
-              <p className="mt-2 text-md lg:text-lg text-gray-400 text-start">
+              <p className="mt-2 text-md lg:text-lg text-gray-600 text-start">
                 Partnering with logistics experts for efficient, last-mile
                 global delivery solutions.
               </p>
             </div>
             {/* Service 5 */}
-            <div className="bg-darkBlue p-8 rounded-lg text-center shadow-lg border border-gray-200 transition duration-300 hover:scale-105 hover:shadow-xl hover:border-2  hover:border-electricBlue">
+            <div className="bg-white p-8 rounded-lg text-center shadow-lg border border-gray-200 transition duration-300 hover:scale-105 hover:shadow-xl hover:border-2  hover:border-electricBlue">
               <FaSearchDollar className="text-electricBlue text-3xl lg:text-5xl mx-auto" />
-              <h1 className="mt-4 text-lg lg:text-2xl font-light text-white tracking-[3px]">
+              <h1 className="mt-4 text-lg lg:text-2xl font-light text-gray-600 tracking-[3px]">
                 MARKET RESEARCH
               </h1>
-              <p className="mt-2 text-md lg:text-lg text-gray-400 text-start">
+              <p className="mt-2 text-md lg:text-lg text-gray-600 text-start">
                 Conducting market research to identify prime business
                 opportunities for your growth.
               </p>
             </div>
             {/* Service 6 */}
-            <div className="bg-darkBlue p-8 rounded-lg text-center shadow-lg border border-gray-200 transition duration-300 hover:scale-105 hover:shadow-xl hover:border-2  hover:border-electricBlue">
+            <div className="bg-white p-8 rounded-lg text-center shadow-lg border border-gray-200 transition duration-300 hover:scale-105 hover:shadow-xl hover:border-2  hover:border-electricBlue">
               <FaCalculator className="text-electricBlue text-3xl lg:text-5xl mx-auto" />
-              <h1 className="mt-4 text-lg lg:text-2xl font-light text-white tracking-[3px]">
+              <h1 className="mt-4 text-lg lg:text-2xl font-light text-gray-600 tracking-[3px]">
                 ACCOUNTING
               </h1>
-              <p className="mt-2 text-md lg:text-lg text-gray-400 text-start">
+              <p className="mt-2 text-md lg:text-lg text-gray-600 text-start">
                 Offering integrated return filing and accounting solutions, with
                 interactive reports.
               </p>
@@ -151,7 +147,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      <hr className="w-[75%] mx-auto border-gray-700" />
 
       {/* Partners Section */}
       <section className="py-16">
@@ -198,21 +193,20 @@ const HomePage = () => {
         </div>
       </section>
 
-      <hr className="w-[75%] mx-auto border-gray-700" />
 
       {/* Expert Solutions Section */}
-      <section className="py-16">
+      <section className="bg-gray-100 py-8">
         <div className="container mx-auto flex flex-col lg:flex-row items-center">
           <div className="w-[85%] lg:w-1/2">
             <h1 className="text-lg lg:text-3xl text-electricBlue font-light tracking-[3px] text-center">
               Expert Solutions for E-Commerce Management
             </h1>
-            <p className="mt-4 text-gray-200 text-md tracking-[1px] lg:text-lg">
+            <p className="mt-4 text-gray-600 text-md tracking-[1px] lg:text-lg">
               Unlock the full potential of your online business with our
               tailored eCommerce management services, designed to drive growth,
               streamline operations, and boost customer satisfaction.
             </p>
-            <p className="mt-4 text-gray-200 text-md tracking-[1px] lg:text-lg">
+            <p className="mt-4 text-gray-600 text-md tracking-[1px] lg:text-lg">
               Our comprehensive solutions simplify workflows and accelerate
               sales growth, consistently exceeding expectations with a
               commitment to excellence.
@@ -228,14 +222,12 @@ const HomePage = () => {
         </div>
       </section>
 
-      <hr className="w-[75%] mx-auto border-gray-700" />
-
       {/* Why Choose Us Section */}
       <section className="w-[95%] lg:w-[95%] mx-auto py-16">
         <h1 className="text-lg lg:text-3xl text-electricBlue font-light tracking-[3px] text-center">
           Why Choose Anivarti for Your E-Commerce Management Needs?
         </h1>
-        <p className="mt-4 w-[90%] lg:w-[80%] mx-auto text-md lg:text-lg text-start tracking-[1px] text-gray-200">
+        <p className="mt-4 w-[90%] lg:w-[80%] mx-auto text-md lg:text-lg text-start tracking-[1px] text-gray-600">
           With expert teams, customized strategies, cutting-edge technology, and
           a proven track record of driving success, we make it easy to scale
           your online business. Let us help you achieve rapid growth—connect
@@ -243,47 +235,47 @@ const HomePage = () => {
         </p>
         <div className="w-[95%] lg:w-[90%] mx-auto grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-8 mt-8 text-center">
           {/* Card 1 */}
-          <div className="bg-darkBlue p-6 border border-gray-100 shadow-lg rounded-lg">
+          <div className="bg-white p-6 border border-gray-100 shadow-lg rounded-lg">
             <AiOutlineUser className="text-5xl text-electricBlue mx-auto" />
-            <h3 className="text-white mt-4 text-xl tracking-[3px] font-semibold">
+            <h3 className="text-gray-600 mt-4 text-xl tracking-[3px] font-semibold">
               Quick Support When You Need
             </h3>
-            <p className="mt-2 text-gray-300 text-md lg:text-lg text-start">
+            <p className="mt-2 text-gray-600 text-md lg:text-lg text-start">
               Our team ensures prompt and reliable assistance, so your store
               operates seamlessly and stays ahead of the competition.
             </p>
           </div>
           {/* Card 2 */}
-          <div className="bg-darkBlue p-6 border border-gray-300 shadow-lg  rounded-lg">
+          <div className="bg-white p-6 border border-gray-300 shadow-lg  rounded-lg">
             <FaBullhorn className="text-5xl text-electricBlue mx-auto" />
-            <h3 className="text-white mt-4 text-xl tracking-[3px] font-semibold">
+            <h3 className="text-gray-600 mt-4 text-xl tracking-[3px] font-semibold">
               Drive Innovation Forward
             </h3>
-            <p className="mt-2 text-gray-300 text-md lg:text-lg text-start">
+            <p className="mt-2 text-gray-600 text-md lg:text-lg text-start">
               At Anivarti, innovation is at our core. We provide solutions that
               transform challenges into opportunities, helping your business
               stay ahead in the dynamic eCommerce space.
             </p>
           </div>
           {/* Card 3 */}
-          <div className="bg-darkBlue p-6 border border-gray-300 shadow-lg  rounded-lg">
+          <div className="bg-white p-6 border border-gray-300 shadow-lg  rounded-lg">
             <FaShieldAlt className="text-5xl text-electricBlue mx-auto" />
-            <h3 className="text-white mt-4 text-xl tracking-[3px] font-semibold">
+            <h3 className="text-gray-600 mt-4 text-xl tracking-[3px] font-semibold">
               Robust Security & Superior Performance
             </h3>
-            <p className="mt-2 text-gray-300 text-md lg:text-lg text-start">
+            <p className="mt-2 text-gray-600 text-md lg:text-lg text-start">
               Your store's safety is our priority. We implement strong security
               measures while optimizing performance to deliver an unmatched
               experience.
             </p>
           </div>
           {/* Card 4 */}
-          <div className="bg-darkBlue p-6 border border-gray-300 shadow-lg rounded-lg">
+          <div className="bg-white p-6 border border-gray-300 shadow-lg rounded-lg">
             <FaSearch className="text-5xl text-electricBlue mx-auto" />
-            <h3 className="text-white mt-4 text-xl tracking-[3px] font-semibold">
+            <h3 className="text-gray-600 mt-4 text-xl tracking-[3px] font-semibold">
               Expand Your Reach
             </h3>
-            <p className="mt-2 text-gray-300 text-md lg:text-lg text-start">
+            <p className="mt-2 text-gray-600 text-md lg:text-lg text-start">
               Unlock new opportunities with Anivarti. We help you explore
               untapped markets and expand across platforms, growing your online
               presence effortlessly.
@@ -292,14 +284,12 @@ const HomePage = () => {
         </div>
       </section>
 
-      <hr className="w-[75%] mx-auto border-gray-700" />
-
       {/* What We Cover Section */}
-      <section className="w-[95%] lg:w-[80%] py-16 text-center mx-auto">
+      <section className="bg-gray-100 w-[100%] py-16 text-center mx-auto">
         <h1 className="text-lg lg:text-3xl text-electricBlue font-light tracking-[3px] text-center mb-4">
           What We Cover in E-Commerce Management Services
         </h1>
-        <p className="w-[95%] lg:w-[80%] text-md lg:text-lg text-gray-200 mx-auto mb-8 tracking-[1px] text-start">
+        <p className="w-[95%] lg:w-[85%] text-md lg:text-lg text-gray-600 mx-auto mb-8 tracking-[1px] text-start">
           At ANIVARTI, our E-commerce Management Services streamline your online
           business through product image optimization, seamless order
           processing, and 24/7 customer support. We enhance operational
@@ -310,7 +300,7 @@ const HomePage = () => {
         <div className="grid md:grid-cols-3 gap-8 mx-auto px-4">
           {/* Card 1 */}
           <div className="bg-white p-6 rounded-lg shadow-md relative">
-            <div className="absolute top-2 left-2 bg-darkBlue text-electricBlue rounded-full w-12 h-12 flex items-center justify-center">
+            <div className="absolute top-2 left-2 text-xl text-gray-700 rounded-full w-12 h-12 flex items-center justify-center">
               01
             </div>
             <div className="flex justify-center mb-4 mt-6">
@@ -330,7 +320,7 @@ const HomePage = () => {
 
           {/* Card 2 */}
           <div className="bg-white p-6 rounded-lg shadow-md relative">
-            <div className="absolute top-2 left-2 bg-darkBlue text-electricBlue rounded-full w-12 h-12 flex items-center justify-center">
+            <div className="absolute top-2 left-2 text-xl text-gray-700 rounded-full w-12 h-12 flex items-center justify-center">
               02
             </div>
             <div className="flex justify-center mb-4 mt-6">
@@ -349,7 +339,7 @@ const HomePage = () => {
 
           {/* Card 3 */}
           <div className="bg-white p-6 rounded-lg shadow-md relative">
-            <div className="absolute top-2 left-2 bg-darkBlue text-electricBlue rounded-full w-12 h-12 flex items-center justify-center">
+            <div className="absolute top-2 left-2 text-xl text-gray-700 rounded-full w-12 h-12 flex items-center justify-center">
               03
             </div>
             <div className="flex justify-center mb-4  mt-6">
@@ -368,7 +358,7 @@ const HomePage = () => {
 
           {/* Card 4 */}
           <div className="bg-white p-6 rounded-lg shadow-md relative">
-            <div className="absolute top-2 left-2  bg-darkBlue text-electricBlue rounded-full w-12 h-12 flex items-center justify-center">
+            <div className="absolute top-2 left-2 text-xl text-gray-700 rounded-full w-12 h-12 flex items-center justify-center">
               04
             </div>
             <div className="flex justify-center mb-4 mt-6">
@@ -387,7 +377,7 @@ const HomePage = () => {
 
           {/* Card 5 */}
           <div className="bg-white p-6 rounded-lg shadow-md relative">
-            <div className="absolute top-2 left-2  bg-darkBlue text-electricBlue rounded-full w-12 h-12 flex items-center justify-center">
+            <div className="absolute top-2 left-2 text-xl text-gray-700 rounded-full w-12 h-12 flex items-center justify-center">
               05
             </div>
             <div className="flex justify-center mb-4 mt-6">
@@ -406,7 +396,7 @@ const HomePage = () => {
 
           {/* Card 6 */}
           <div className="bg-white p-6 rounded-lg shadow-md relative">
-            <div className="absolute top-2 left-2  bg-darkBlue text-electricBlue rounded-full w-12 h-12 flex items-center justify-center">
+            <div className="absolute top-2 left-2  text-xl text-gray-700 rounded-full w-12 h-12 flex items-center justify-center">
               06
             </div>
             <div className="flex justify-center mb-4 mt-6">
@@ -425,14 +415,12 @@ const HomePage = () => {
         </div>
       </section>
 
-      <hr className="w-[75%] mx-auto border-gray-700" />
-
       {/* Benefits Section */}
       <section className="py-16 text-center">
         <h1 className="w-[90%] text-xl lg:text-3xl font-light text-electricBlue tracking-[3px] mb-4">
           Benefits of E-Commerce Website Management
         </h1>
-        <p className="w-[90%] lg:w-[60%] text-md lg:text-lg text-gray-200 mx-auto mb-8 text-start tracking-[1px] lg:text-center">
+        <p className="w-[90%] lg:w-[60%] text-md lg:text-lg text-gray-600 mx-auto mb-8 text-start tracking-[1px] lg:text-center">
           Focus on growth while we manage tech and operations. Cut costs, boost
           efficiency, and get 24/7 support. Scale effortlessly, enhance your
           platform, and launch fast with our secure, high-performance solutions.
@@ -442,10 +430,10 @@ const HomePage = () => {
           {/* Card 1 - Market Trend Analysis */}
           <div className="relative p-6 rounded-lg shadow-md flex flex-col items-center text-center  border border-gray-300">
             <FaChartLine className="text-electricBlue text-4xl mb-4" />
-            <h3 className="text-md text-white tracking-[2px]">
+            <h3 className="text-md text-gray-800 tracking-[2px]">
               Market Trend Analysis
             </h3>
-            <p className="text-gray-300 text-sm mt-2 border-l-4 pl-2 border-electricBlue text-start tracking-[1px]">
+            <p className="text-gray-500 text-sm mt-2 hover:border-l-4 pl-2 hover:border-electricBlue transition-all duration-200 text-start tracking-[1px]">
               We analyze market trends and customer behaviors to deliver
               actionable insights, helping you stay ahead of competitors and
               meet evolving demands.
@@ -455,10 +443,10 @@ const HomePage = () => {
           {/* Card 2 - Streamline Operations */}
           <div className="relative p-6 rounded-lg shadow-md flex flex-col items-center text-center border border-gray-300">
             <FaTasks className="text-electricBlue text-4xl mb-4" />
-            <h3 className="text-md text-white tracking-[2px]">
+            <h3 className="text-md text-gray-800 tracking-[2px]">
               Streamline Operations Effortlessly
             </h3>
-            <p className="text-gray-300 text-sm mt-2 border-l-4 pl-2 border-electricBlue text-start tracking-[1px]">
+            <p className="text-gray-500 text-sm mt-2 hover:border-l-4 pl-2 hover:border-electricBlue transition-all duration-200 text-start tracking-[1px]">
               We manage your technical and operational tasks to enhance
               efficiency, freeing up your time to focus on confidently scaling
               your business.
@@ -468,10 +456,10 @@ const HomePage = () => {
           {/* Card 3 - Maximize Business Value */}
           <div className="relative p-6 rounded-lg shadow-md flex flex-col items-center text-center  border border-gray-300">
             <FaDollarSign className="text-electricBlue text-4xl mb-4" />
-            <h3 className="text-md text-white tracking-[2px]">
+            <h3 className="text-md text-gray-800 tracking-[2px]">
               Maximize Business Value
             </h3>
-            <p className="text-gray-300 text-sm mt-2 border-l-4 pl-2 border-electricBlue text-start tracking-[1px]">
+            <p className="text-gray-500 text-sm mt-2 hover:border-l-4 pl-2 hover:border-electricBlue transition-all duration-200 text-start tracking-[1px]">
               We handle operations and tech support, allowing you to focus on
               innovation, customer relationships, and revenue growth.
             </p>
@@ -480,10 +468,10 @@ const HomePage = () => {
           {/* Card 4 - Cut Costs & Boost Efficiency */}
           <div className="relative p-6 rounded-lg shadow-md flex flex-col items-center text-center  border border-gray-300">
             <FaRocket className="text-electricBlue text-4xl mb-4" />
-            <h3 className="text-md text-white tracking-[2px]">
+            <h3 className="text-md text-gray-800 tracking-[2px]">
               Cut Costs & Boost Efficiency
             </h3>
-            <p className="text-gray-300 text-sm mt-2 border-l-4 pl-2 border-electricBlue text-start tracking-[1px]">
+            <p className="text-gray-500 text-sm mt-2 hover:border-l-4 pl-2 hover:border-electricBlue transition-all duration-200 text-start tracking-[1px]">
               Reduce overhead and streamline workflows through automated
               processes and expert support.
             </p>
@@ -492,10 +480,10 @@ const HomePage = () => {
           {/* Card 5 - Scale Your Business */}
           <div className="relative p-6 rounded-lg shadow-md flex flex-col items-center text-center  border border-gray-300">
             <FaExpand className="text-electricBlue text-4xl mb-4" />
-            <h3 className="text-md text-white tracking-[2px]">
+            <h3 className="text-md text-gray-800 tracking-[2px]">
               Scale Your Business with Confidence
             </h3>
-            <p className="text-gray-300 text-sm mt-2 border-l-4 pl-2 border-electricBlue text-start tracking-[1px]">
+            <p className="text-gray-500 text-sm mt-2 hover:border-l-4 pl-2 hover:border-electricBlue transition-all duration-200 text-start tracking-[1px]">
               Gain the tools, expertise, and support needed for seamless scaling
               without growing pains.
             </p>
@@ -504,10 +492,10 @@ const HomePage = () => {
           {/* Card 6 - Focus on Customer Success */}
           <div className="relative p-6 rounded-lg shadow-md flex flex-col items-center text-center  border border-gray-300">
             <FaUsers className="text-electricBlue text-4xl mb-4" />
-            <h3 className="text-md text-white tracking-[2px]">
+            <h3 className="text-md text-gray-800 tracking-[2px]">
               Focus on Customer Success
             </h3>
-            <p className="text-gray-300 text-sm mt-2 border-l-4 pl-2 border-electricBlue text-start tracking-[1px]">
+            <p className="text-gray-500 text-sm mt-2 hover:border-l-4 pl-2 hover:border-electricBlue transition-all duration-200 text-start tracking-[1px]">
               Enhance user experience and satisfaction with optimized operations
               and reliable solutions.
             </p>
@@ -516,10 +504,10 @@ const HomePage = () => {
           {/* Card 7 - Launch Faster, Grow Faster */}
           <div className="relative p-6 rounded-lg shadow-md flex flex-col items-center text-center  border border-gray-300">
             <FaBolt className="text-electricBlue text-4xl mb-4" />
-            <h3 className="text-md text-white tracking-[2px]">
+            <h3 className="text-md text-gray-800 tracking-[2px]">
               Launch Faster, Grow Faster
             </h3>
-            <p className="text-gray-300 text-sm mt-2  border-l-4 pl-2 border-electricBlue text-start tracking-[1px]">
+            <p className="text-gray-500 text-sm mt-2  hover:border-l-4 pl-2 hover:border-electricBlue transition-all duration-200 text-start tracking-[1px]">
               Accelerate your time-to-market with our high-performance,
               ready-to-use solutions.
             </p>
@@ -528,10 +516,10 @@ const HomePage = () => {
           {/* Card 8 - 24/7 Dedicated Support */}
           <div className="relative p-6 rounded-lg shadow-md flex flex-col items-center text-center  border border-gray-300">
             <FaHeadset className="text-electricBlue text-4xl mb-4" />
-            <h3 className="text-md text-white tracking-[2px]">
+            <h3 className="text-md text-gray-800 tracking-[2px]">
               24/7 Dedicated Support
             </h3>
-            <p className="text-gray-300 text-sm mt-2 text-start border-l-4 pl-2 border-electricBlue tracking-[1px]">
+            <p className="text-gray-500 text-sm mt-2 text-start hover:border-l-4 pl-2 hover:border-electricBlue transition-all duration-200 tracking-[1px]">
               Enjoy peace of mind with round-the-clock tech and operational
               assistance.
             </p>
@@ -539,14 +527,13 @@ const HomePage = () => {
         </div>
       </section>
 
-      <hr className="w-[75%] mx-auto border-gray-700" />
 
       {/* ecommerce solutions Section */}
-      <section className="py-16 text-center">
+      <section className="bg-gray-100 py-16 text-center">
         <h1 className="text-xl lg:text-3xl font-light text-electricBlue tracking-[3px] mb-4">
           E-Commerce Management Solutions
         </h1>
-        <p className="w-[90%] lg:w-[65%] text-md lg:text-lg text-gray-200 mx-auto mb-8 tracking-[1px] text-start">
+        <p className="w-[90%] lg:w-[65%] text-md lg:text-lg text-gray-600 mx-auto mb-8 tracking-[1px] text-start">
           Streamline your online business with our comprehensive e-commerce
           management solutions. We offer a suite of tools and expertise to
           optimize your sales, enhance customer experience, and drive
@@ -557,77 +544,76 @@ const HomePage = () => {
           {/* Solution Cards */}
           <div className=" p-6 rounded-lg shadow-md flex flex-col items-center  border border-gray-300">
             <FaShoppingCart className="text-4xl text-electricBlue" />
-            <h3 className="text-lg text-white mt-2 tracking-[5px]">
+            <h3 className="text-lg text-gray-700 mt-2 tracking-[5px]">
               Pre-Sales Support
             </h3>
           </div>
 
           <div className=" p-6 rounded-lg shadow-md flex flex-col items-center  border border-gray-300">
             <MdInventory className="text-4xl text-electricBlue" />
-            <h3 className="text-lg text-white mt-2 tracking-[5px]">
+            <h3 className="text-lg text-gray-700 mt-2 tracking-[5px]">
               Inventory Management
             </h3>
           </div>
 
           <div className="p-6 rounded-lg shadow-md flex flex-col items-center  border border-gray-300">
             <MdOutlineCategory className="text-4xl text-electricBlue" />
-            <h3 className="text-lg text-white mt-2 tracking-[5px]">
+            <h3 className="text-lg text-gray-700 mt-2 tracking-[5px]">
               Catalog Management
             </h3>
           </div>
 
           <div className="p-6 rounded-lg shadow-md flex flex-col items-center border border-gray-300">
             <BsClipboardCheck className="text-4xl text-electricBlue" />
-            <h3 className="text-lg text-white mt-2 tracking-[5px]">
+            <h3 className="text-lg text-gray-700 mt-2 tracking-[5px]">
               Order Management
             </h3>
           </div>
 
           <div className="p-6 rounded-lg shadow-md flex flex-col items-center  border border-gray-300">
             <FaTruck className="text-4xl text-electricBlue" />
-            <h3 className="text-lg text-white mt-2 tracking-[5px]">
+            <h3 className="text-lg text-gray-700 mt-2 tracking-[5px]">
               Logistic Management
             </h3>
           </div>
 
           <div className="p-6 rounded-lg shadow-md flex flex-col items-center  border border-gray-300">
             <FaGlobe className="text-4xl text-electricBlue" />
-            <h3 className="text-lg text-white mt-2 tracking-[5px]">
+            <h3 className="text-lg text-gray-700 mt-2 tracking-[5px]">
               Marketplace Management
             </h3>
           </div>
 
           <div className=" p-6 rounded-lg shadow-md flex flex-col items-center  border border-gray-300">
             <MdOutlineManageSearch className="text-4xl text-electricBlue" />
-            <h3 className="text-lg text-white mt-2 tracking-[5px]">
+            <h3 className="text-lg text-gray-700 mt-2 tracking-[5px]">
               Data Management & Annotation
             </h3>
           </div>
 
           <div className="p-6 rounded-lg shadow-md flex flex-col items-center  border border-gray-300">
             <FaComments className="text-4xl text-electricBlue" />
-            <h3 className="text-lg text-white mt-2 tracking-[5px]">
+            <h3 className="text-lg text-gray-700 mt-2 tracking-[5px]">
               Customer Support
             </h3>
           </div>
 
           <div className="p-6 rounded-lg shadow-md flex flex-col items-center  border border-gray-300">
             <FaChartLine className="text-4xl text-electricBlue" />
-            <h3 className="text-lg text-white mt-2 tracking-[5px]">
+            <h3 className="text-lg text-gray-700 mt-2 tracking-[5px]">
               Customer Data Insights
             </h3>
           </div>
         </div>
       </section>
 
-      <hr className="w-[75%] mx-auto border-gray-700" />
 
       {/* our preffered platforms Section */}
       <section className="w-[95%] mx-auto py-16 text-center">
         <h1 className="text-xl lg:text-3xl font-bold text-electricBlue mb-4">
           Our Preferred E-Commerce Platforms
         </h1>
-        <p className="w-[95%] lg:w-[65%] text-md lg:text-lg text-gray-200 mx-auto mb-8 tracking-[1px] text-start">
+        <p className="w-[95%] lg:w-[75%] text-md lg:text-lg text-gray-600 mx-auto mb-8 tracking-[1px] text-start">
           Anivarti utilizes advanced eCommerce CMS and CRM platforms, combining
           premium themes, plugins, and extensions. We create tailored eStores
           that simplify online selling. Our expertise helps local sellers
@@ -682,53 +668,50 @@ const HomePage = () => {
         </div>
       </section>
 
-      <hr className="w-[75%] mx-auto border-gray-700" />
 
       {/* contact details Section */}
-      <section className="py-16 text-center">
+      <section className="bg-gray-100 py-16 text-center">
         <h1 className="text-xl lg:text-3xl font-bold text-electricBlue mb-8 tracking-[5px]">
           Contact Details
         </h1>
 
         <div className="w-[95%] lg:w-[70%] flex flex-wrap justify-between items-center mx-auto gap-x-6">
           {/* Address */}
-          <div className="flex items-center shadow-md p-6 rounded-lg w-full lg:w-auto">
+          <div className="flex items-center  p-6 rounded-lg w-full lg:w-auto">
             <FaMapMarkerAlt className="text-electricBlue text-4xl mr-4" />
             <div className="text-left">
-              <h3 className="text-lg font-semibold text-white">Address</h3>
-              <p className="text-gray-300">
+              <h3 className="text-lg font-semibold text-gray-700">Address</h3>
+              <p className="text-gray-500">
                 Plot No. 22, Govind Vihar Sanganer, Jaipur 302022
               </p>
             </div>
           </div>
 
           {/* Email */}
-          <div className="flex items-center shadow-md p-6 rounded-lg w-full lg:w-auto">
+          <div className="flex items-center  p-6 rounded-lg w-full lg:w-auto">
             <FaEnvelope className="text-electricBlue text-4xl mr-4" />
             <div className="text-left">
-              <h3 className="text-lg font-semibold text-white">Email</h3>
-              <p className="text-gray-300">office@anivati.in</p>
+              <h3 className="text-lg font-semibold text-gray-700">Email</h3>
+              <p className="text-gray-500">office@anivati.in</p>
             </div>
           </div>
 
           {/* Mobile Number */}
-          <div className="flex items-center shadow-md p-6 rounded-lg w-full lg:w-auto">
+          <div className="flex items-center p-6 rounded-lg w-full lg:w-auto">
             <FaPhone className="text-electricBlue text-4xl mr-4" />
             <div className="text-left">
-              <h3 className="text-lg font-semibold text-white">
+              <h3 className="text-lg font-semibold text-gray-700">
                 Mobile Number
               </h3>
-              <p className="text-gray-300">8955578234</p>
+              <p className="text-gray-500">8955578234</p>
             </div>
           </div>
         </div>
       </section>
 
-      <hr className="w-[100%] mx-auto border-gray-700" />
-
       {/* footer Section */}
       <footer className="py-10 text-center">
-        <p className="text-md lg:text-xl text-gray-300">
+        <p className="text-md lg:text-xl text-gray-600">
           Copyright &copy; {new Date().getFullYear()} Anivarti. All rights
           reserved.
         </p>
