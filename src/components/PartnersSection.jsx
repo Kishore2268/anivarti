@@ -1,6 +1,6 @@
 const PartnersSection = () => {
     return (
-      <section className="py-16">
+      <section className="py-24">
         <h1 className="p-4 text-lg lg:text-3xl text-electricBlue font-light tracking-[5px] text-center">
           PARTNER & SUPPORTED BY
         </h1>
