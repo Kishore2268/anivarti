@@ -21,14 +21,14 @@ const Ecommerce = () => {
         <h1 className="text-xl lg:text-3xl font-light text-electricBlue tracking-[3px] mb-4">
           E-Commerce Management Solutions
         </h1>
-        <p className="w-[90%] lg:w-[90%] text-md lg:text-lg text-gray-600 mx-auto mb-8 tracking-[1px] text-start">
+        <p className="w-[95%] lg:w-[90%] text-md lg:text-lg text-gray-600 mx-auto mb-8 tracking-[1px] text-start">
           Streamline your online business with our comprehensive e-commerce
           management solutions. We offer a suite of tools and expertise to
           optimize your sales, enhance customer experience, and drive
           sustainable growth.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-12 max-w-7xl mx-auto px-4">
+        <div className="w-[90%] grid md:grid-cols-3 gap-6 lg:gap-12 max-w-7xl mx-auto px-4">
           {/* Solution Cards */}
           <div className=" p-6 rounded-lg shadow-md flex flex-col items-center  border border-gray-300">
             <FaShoppingCart className="text-4xl text-electricBlue" />

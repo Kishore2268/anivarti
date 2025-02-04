@@ -1,6 +1,6 @@
 const PartnersSection = () => {
     return (
-      <section className="py-24">
+      <section className="w-[95%] mx-auto py-16">
         <h1 className="p-4 text-lg lg:text-3xl text-electricBlue font-light tracking-[5px] text-center">
           PARTNER & SUPPORTED BY
         </h1>
@@ -9,35 +9,35 @@ const PartnersSection = () => {
             <img
               src="images/ABC.webp"
               alt="Company Logo"
-              className="w-32 h-32 p-1 bg-white object-cover mx-auto"
+              className="w-40 h-32 p-1 bg-white object-cover mx-auto"
             />
           </div>
           <div className="transition transform hover:scale-105">
             <img
               src="images/zentelia.jpg"
               alt="Company Logo"
-              className="w-32 h-32  p-1 bg-white object-contain mx-auto"
+              className="w-40 h-32  p-1 bg-white object-contain mx-auto"
             />
           </div>
           <div className="transition transform hover:scale-105">
             <img
               src="images/ISTART.webp"
               alt="Company Logo"
-              className="w-32 h-32 p-1 bg-white object-contain mx-auto"
+              className="w-40 h-32 p-1 bg-white object-contain mx-auto"
             />
           </div>
           <div className="transition transform hover:scale-105">
             <img
               src="images/NITI-AIM-Logo.jpg"
               alt="Company Logo"
-              className="w-32 h-32  p-1 bg-white object-contain mx-auto"
+              className="w-40 h-32  p-1 bg-white object-contain mx-auto"
             />
           </div>
           <div className="transition transform hover:scale-105">
             <img
               src="images/startup-india.webp"
               alt="Company Logo"
-              className="w-32 h-32  p-1 bg-white object-contain mx-auto"
+              className="w-40 h-32  p-1 bg-white object-contain mx-auto"
             />
           </div>
         </div>

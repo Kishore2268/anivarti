@@ -5,12 +5,15 @@ const Contact = () => {
   return (
     <div>
       {/* Contact Form Section */}
-      <section className="bg-white py-8 mb-4 text-center rounded-lg border border-gray-200 shadow-xl">
-        <h1 className="text-xl lg:text-3xl font-bold text-electricBlue mb-8 tracking-[5px]">
+      <section className="w-[90%] mx-auto bg-white py-8 mb-4 mt-12 text-center ">
+        <h1 className="text-xl lg:text-3xl font-semibold text-black mb-8 tracking-[5px]">
           Get In Touch
         </h1>
         
-        <form className="w-[95%] lg:w-[90%] mx-auto  p-2 ">
+        <form className="w-[95%] lg:w-[90%] mx-auto  p-6 rounded-xl border border-gray-300 shadow-xl ">
+        <h1 className="text-xl lg:text-3xl  text-center text-gray-800 mb-8 tracking-[5px]">
+          Contact Us
+        </h1>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <input type="text" placeholder="Full Name" className="w-full h-12 border border-gray-400 p-2" required />
             <input type="email" placeholder="Email Address" className="w-full h-12 border border-gray-400 p-2" required />
@@ -33,12 +36,12 @@ const Contact = () => {
       </section>
 
       {/* Contact Details Section */}
-      <section className="py-8 text-center">
+      <section className="py-16 text-center">
         <h1 className="text-xl lg:text-3xl font-bold text-electricBlue mb-8 tracking-[5px]">
           Contact Details
         </h1>
 
-        <div className="w-[95%] lg:w-[90%] flex flex-col  justify-between items-start mx-auto gap-y-4">
+        <div className="w-[95%] lg:w-[70%] flex flex-col lg:flex-row  justify-between items-start mx-auto">
           {/* Address */}
           <a
             href="https://www.google.com/maps/search/?api=1&query=Plot+No.+22,+Govind+Vihar+Sanganer,+Jaipur+302022"

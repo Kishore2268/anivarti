@@ -4,7 +4,7 @@ import { FaShoppingCart, FaBullhorn, FaCreditCard, FaTruckMoving, FaSearchDollar
 
 const ServicesSection = () => {
   return (
-    <section className="py-16 mt-4 w-[100%] mx-auto">
+    <section className="py-8 w-[100%] mx-auto">
       <div className="w-[95%] lg:w-[90%] container mx-auto text-center">
         {/* Our Services Heading */}
         <h1 className="px-6 py-3 text-2xl lg:text-3xl text-electricBlue rounded-md font-light tracking-[5px] inline-block mb-2 lg:mb-4">
