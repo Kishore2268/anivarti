@@ -10,7 +10,7 @@ module.exports = {
       },
       //custom colors
       colors: {
-        darkBlue: '#000813',
+        darkBlue: '#0A244A',
         skyBlue: '#5DADE2',
         electricBlue: '#00DEFC',
         darkGray: '#1C1C1E',

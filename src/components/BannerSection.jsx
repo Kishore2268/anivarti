@@ -3,7 +3,7 @@ import { FaHandPointDown } from 'react-icons/fa';
 
 const BannerSection = () => {
   return (
-    <section className="h-screen bg-white flex justify-center items-center mt-16">
+    <section className="h-screen bg-white flex justify-center items-center">
       <div className="flex flex-col lg:flex-row justify-between items-center w-[95%] lg:w-[85%] px-4">
         <div className="w-full text-left">
           <h1 className="text-2xl lg:text-5xl font-bold text-electricBlue text-center tracking-[5px]">

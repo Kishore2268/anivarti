@@ -42,43 +42,31 @@ const HomePage = () => {
   ];
 
   useEffect(() => {
-    let scrollTimeout;
-  
     const handleScroll = () => {
-      if (scrollTimeout) clearTimeout(scrollTimeout);
-  
-      scrollTimeout = setTimeout(() => {
-        const sections = document.querySelectorAll(".section");
-        let closestIndex = 0;
-        let minDistance = Number.MAX_VALUE;
-  
-        sections.forEach((section, index) => {
-          const rect = section.getBoundingClientRect();
-          const distance = Math.abs(rect.top - window.innerHeight / 3);
-  
-          if (distance < minDistance) {
-            minDistance = distance;
-            closestIndex = index;
-          }
-        });
-  
-        // Only update if the closest section is different from the current one
-        if (closestIndex !== currentIndex) {
-          setCurrentIndex(closestIndex);
+      const sections = document.querySelectorAll(".section");
+      let closestIndex = currentIndex;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top >= 0 && rect.top <= window.innerHeight / 2) {
+          closestIndex = index;
         }
-      }, 100); // Adjust debounce delay if needed
+      });
+
+      // Update currentIndex only if it's different
+      if (closestIndex !== currentIndex) {
+        setCurrentIndex(closestIndex);
+      }
     };
-  
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [currentIndex]);
-  
-  
-  
+
   return (
-    <div className="flex w-full  overflow-hidden">
+    <div className="flex w-full overflow-hidden">
       {/* Left Side: Sections */}
-      <div className="w-1/2 overflow-y-auto  scroll-smooth">
+      <div className="w-1/2 overflow-y-auto scroll-smooth">
         {sectionIds.map((id, index) => (
           <div key={id} className="section py-20 px-10" id={id}>
             {index === 0 && <BannerSection />}
@@ -93,17 +81,13 @@ const HomePage = () => {
             {index === 9 && <Contact />}
           </div>
         ))}
+        <hr className="h-1 w-full text-gray-200" />
         <Footer />
       </div>
 
       {/* Right Side: Fixed Image Slider */}
       <div className="w-1/2 fixed top-0 right-0 h-screen overflow-hidden">
-        <ImageSlider
-          images={sectionImages}
-          currentIndex={currentIndex}
-          setCurrentIndex={setCurrentIndex}
-          sectionIds={sectionIds}
-        />
+        <ImageSlider images={sectionImages} currentIndex={currentIndex} />
       </div>
     </div>
   );
