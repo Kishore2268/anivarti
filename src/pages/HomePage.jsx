@@ -5,6 +5,7 @@ import PartnersSection from "../components/PartnersSection";
 import Footer from "../components/Footer";
 import LaptopSection from "../components/LaptopSection";
 import Contact from "../components/Contact";
+import TestimonialSection from "../components/Testimonials";
 
 const HomePage = () => {
   return (
@@ -13,6 +14,7 @@ const HomePage = () => {
       <LaptopSection />
       <ServicesSection />
       <PartnersSection />
+      <TestimonialSection />
       <Contact />
       <hr className="h-1 w-full text-gray-200" />
       <Footer />
@@ -21,3 +23,4 @@ const HomePage = () => {
 };
 
 export default HomePage;
+

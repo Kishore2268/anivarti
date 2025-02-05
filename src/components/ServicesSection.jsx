@@ -19,7 +19,7 @@ const servicesData = [
 
 const ServicesSection = () => {
   return (
-    <div className="px-6">
+    <div className="px-12 mb-12">
       {/* Heading and Paragraph */}
       <div className="text-center my-8">
         <motion.h2
@@ -27,7 +27,6 @@ const ServicesSection = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          viewport={{once: true}}
         >
           Our Services
         </motion.h2>
@@ -36,14 +35,14 @@ const ServicesSection = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
-          viewport={{once: true}}
+          viewport={{once:true}}
         >
           We offer a wide range of services to help you succeed in the digital world. Explore our offerings and find the perfect solution for your business.
         </motion.p>
       </div>
 
       {/* Service Cards */}
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-6">
         {servicesData.map((service, index) => (
           <motion.div
             key={index}
@@ -51,15 +50,14 @@ const ServicesSection = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2 * index, duration: 1 }}
-            viewport={{once: true}}
           >
             {/* Parallax Text */}
             <motion.div
               className="absolute top-2 lg:top-3 left-2 lg:left-3 transform -translate-y-1/2 text-sm lg:text-lg text-gray-500"
               initial={{ x: -100 }}
               animate={{x: 0, whileInView:true}}
-              transition={{ type: 'spring', stiffness: 300, delay: 0.2 * index, duration: 2 }}
-              viewport={{once: true}}
+              transition={{ type: 'spring', stiffness: 300, delay: 0.2 * index, duration: 1 }}
+              viewport={{once:false}}
             >
               #{index + 1 < 10 ? `0${index + 1}` : index + 1}
             </motion.div>
@@ -70,17 +68,15 @@ const ServicesSection = () => {
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 ,}}
               transition={{ type: 'spring', stiffness: 300 }}
-              viewport={{once: true}}
             >
               {service.icon}
             </motion.div>
 
             <motion.h3
-              className="text-md lg:text-xl tracking-[2px] mb-4"
+              className="text-sm lg:text-lg tracking-[2px] mb-4"
               initial={{ y: -20 }}
               whileInView={{ y: 0 }}
               transition={{ type: 'spring', stiffness: 200 , delay: 0.2*index , duration: 2 }}
-              viewport={{once: true}}
             >
               {service.name}
             </motion.h3>
@@ -90,10 +86,9 @@ const ServicesSection = () => {
 
       {/* Read More Button */}
       <motion.div
-        className="col-span-full flex justify-center mt-8"
+        className="col-span-full flex justify-center mt-6 lg:mt-12"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{once: true}}
         transition={{ delay: 1, duration: 0.6 }}
       >
         <Link

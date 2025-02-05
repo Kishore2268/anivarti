@@ -95,7 +95,7 @@ const Contact = () => {
           Contact Details
         </motion.h1>
 
-        <div className="w-[95%] lg:w-[70%] flex flex-col lg:flex-row justify-between items-start mx-auto space-y-6 lg:space-y-0 lg:space-x-8">
+        <div className="w-[90%] lg:w-[70%] flex flex-col lg:flex-row justify-between items-start mx-auto space-y-6 lg:space-y-0 lg:space-x-8">
           {/* Address */}
           <motion.a
             href="https://www.google.com/maps/search/?api=1&query=Plot+No.+22,+Govind+Vihar+Sanganer,+Jaipur+302022"
@@ -104,7 +104,7 @@ const Contact = () => {
             className="flex items-center p-4 rounded-lg w-full lg:w-auto hover:bg-gray-200 transition"
             whileInView={{ opacity: 1 }}
             initial={{ opacity: 0 }}
-            transition={{ delay: 1 }}
+            transition={{ delay: 0.3 }}
           >
             <motion.div
               animate={{ y: [0, -10, 0] }}
@@ -130,7 +130,7 @@ const Contact = () => {
             className="flex items-center p-4 rounded-lg w-full lg:w-auto hover:bg-gray-200 transition"
             whileInView={{ opacity: 1 }}
             initial={{ opacity: 0 }}
-            transition={{ delay: 1.2 }}
+            transition={{ delay: 0.6 }}
           >
             <motion.div
               initial={{ scale: 1 }}
@@ -159,7 +159,7 @@ const Contact = () => {
             className="flex items-center p-2 rounded-4xl w-full lg:w-auto hover:bg-gray-200 transition"
             whileInView={{ opacity: 1 }}
             initial={{ opacity: 0 }}
-            transition={{ delay: 1.4 }}
+            transition={{ delay: 0.9 }}
           >
             <motion.div
               className="relative"
