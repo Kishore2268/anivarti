@@ -1,14 +1,14 @@
 import React from "react";
-import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
+import { FaMapMarkerAlt, FaEnvelope, FaPhoneVolume } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
     <div>
       {/* Contact Form Section */}
-      <section className="w-[90%] mx-auto bg-white py-8 mb-4 mt-12 text-center">
-      <motion.h1
-          className="text-xl lg:text-3xl font-semibold text-black mb-8 tracking-[5px] typing-effect"
+      <section className="w-[95%] lg:w-[90%] mx-auto bg-white py-8 mb-4 mt-12 text-center">
+        <motion.h1
+          className="text-lg lg:text-3xl font-semibold text-black mb-8 tracking-[3px] "
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -16,6 +16,7 @@ const Contact = () => {
         >
           Your Thoughts Matter! Send us a message, and let's make things right!
         </motion.h1>
+
         <motion.div
           className="w-[95%] lg:w-[80%] mx-auto p-6 rounded-xl border border-gray-300 shadow-xl"
           initial={{ opacity: 0, y: 30 }}
@@ -26,7 +27,7 @@ const Contact = () => {
           <h1 className="text-xl lg:text-3xl font-semibold text-black mb-8 tracking-[5px]">
             Get In Touch
           </h1>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
             <motion.input
               type="text"
               placeholder="Full Name"
@@ -74,7 +75,7 @@ const Contact = () => {
           ></motion.textarea>
           <motion.button
             type="submit"
-            className="mt-4 bg-electricBlue text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
+            className="mt-4 bg-electricBlue text-white px-6 py-2 rounded-lg tracking-[1px] hover:bg-blue-700 transition"
             whileInView={{ opacity: 1 }}
             initial={{ opacity: 0 }}
             transition={{ delay: 1.2 }}
@@ -85,7 +86,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Details Section */}
-      <section className="py-16 text-center">
+      <section className="py-8 lg:py-16 text-center">
         <motion.h1
           className="text-xl lg:text-3xl font-bold text-electricBlue mb-8 tracking-[5px]"
           initial={{ opacity: 0 }}
@@ -95,7 +96,7 @@ const Contact = () => {
           Contact Details
         </motion.h1>
 
-        <div className="w-[90%] lg:w-[70%] flex flex-col lg:flex-row justify-between items-start mx-auto space-y-6 lg:space-y-0 lg:space-x-8">
+        <div className="w-[90%] md:w-[90%] lg:w-[80%] flex flex-col lg:flex-row justify-between items-start mx-auto space-y-6 lg:space-y-0 lg:space-x-8">
           {/* Address */}
           <motion.a
             href="https://www.google.com/maps/search/?api=1&query=Plot+No.+22,+Govind+Vihar+Sanganer,+Jaipur+302022"
@@ -114,7 +115,7 @@ const Contact = () => {
                 ease: "easeInOut",
               }}
             >
-              <FaMapMarkerAlt className="text-electricBlue text-3xl mr-4" />
+              <FaMapMarkerAlt className="text-electricBlue text-4xl mr-4" />
             </motion.div>
             <div className="text-left">
               <h3 className="text-lg font-semibold text-gray-700">Address</h3>
@@ -144,7 +145,7 @@ const Contact = () => {
                 ease: "easeInOut", // Smooth easing for the pulse
               }}
             >
-              <FaEnvelope className="text-electricBlue text-3xl mr-4" />
+              <FaEnvelope className="text-electricBlue text-4xl mr-4" />
             </motion.div>
 
             <div className="text-left">
@@ -163,7 +164,7 @@ const Contact = () => {
           >
             <motion.div
               className="relative"
-              animate={{ rotate: [0, 3, -3, 0] }}
+              animate={{ rotate: [0, 4, -4, 0] }}
               transition={{
                 repeat: Infinity,
                 duration: 0.2,
@@ -172,14 +173,14 @@ const Contact = () => {
             >
               {/* Ringing Effect */}
               <motion.div
-                className="absolute inset-0 border-l-2 border-r-2 border-gray-600 rounded-full animate-ping"
+                className="absolute inset-0"
                 style={{
                   animationDuration: "1.5s",
                   animationIterationCount: "infinite",
                 }}
               ></motion.div>
 
-              <FaPhone className="text-electricBlue text-3xl mr-4 relative z-10" />
+              <FaPhoneVolume className="text-electricBlue text-4xl mr-4 relative z-10" />
             </motion.div>
 
             <div className="text-left">

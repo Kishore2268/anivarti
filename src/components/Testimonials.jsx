@@ -45,8 +45,8 @@ const TestimonialSection = () => {
   const swiperRef = useRef(null);
 
   return (
-    <div className="w-full max-w-6xl mx-auto text-center py-12">
-      <h2 className="text-xl lg:text-3xl font-bold text-gray-800 mb-8">
+    <div className="w-full max-w-6xl mx-auto text-center py-2 lg:py-12">
+      <h2 className="text-xl lg:text-4xl  text-gray-800 mb-8">
         What Our Clients Say About Us
       </h2>
 
@@ -62,7 +62,10 @@ const TestimonialSection = () => {
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         breakpoints={{
           768: {
-            slidesPerView: 2.2,
+            slidesPerView: 1.4,
+          },
+          1024: {
+            slidesPerView: 1.8,
           },
         }}
       >
@@ -70,7 +73,7 @@ const TestimonialSection = () => {
           <SwiperSlide key={testimonial.id}>
             {({ isActive }) => (
               <motion.div
-                className="w-full flex items-center bg-white border border-gray-300 shadow-lg rounded-lg p-6 transition-all duration-500"
+                className="w-full flex items-center bg-white border border-gray-300 shadow-lg rounded-lg p-2 lg:p-6 transition-all duration-500"
                 style={{
                   transform: isActive ? "scale(1)" : "scale(0.9)",
                   opacity: isActive ? 1 : 0.3,
@@ -81,19 +84,19 @@ const TestimonialSection = () => {
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className="w-16 h-16 lg:w-32 lg:h-32 rounded-full mx-auto mb-3"
+                    className="w-16 h-16 md:w-24 md:h-24 lg:w-32 lg:h-32 rounded-full mx-auto mb-3"
                   />
-                  <h4 className="text-sm lg:text-xl tracking-[1px] font-semibold text-gray-700 mb-1">
+                  <h4 className="text-sm md:text-md lg:text-xl tracking-[1px] text-gray-700 mb-1">
                     {testimonial.name}
                   </h4>
-                  <p className="text-xs lg:text-lg text-gray-500 mb-2 tracking-[1px]">{testimonial.company}</p>
+                  <p className="text-xs md:text-md lg:text-lg text-gray-500 mb-2 tracking-[1px]">{testimonial.company}</p>
                 </div>
 
                 {/* Divider Line */}
                 <div className="h-32 w-px bg-gray-300 mx-4"></div>
 
                 {/* Right Side: Feedback */}
-                <div className="w-3/5 text-left text-sm lg:text-lg tracking-[0.5px] text-gray-600">
+                <div className="w-3/5 text-left text-sm md:text-md lg:text-lg tracking-[0.5px] text-gray-600">
                   <p
                     dangerouslySetInnerHTML={{ __html: testimonial.feedback }}
                   />

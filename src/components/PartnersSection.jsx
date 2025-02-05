@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const PartnersSection = () => {
   return (
-    <section className="w-[95%] mx-auto py-12">
+    <section className="w-[95%] mx-auto py-4 lg:py-12">
       <motion.h1
         className="p-4 text-lg lg:text-3xl text-electricBlue font-light tracking-[5px] text-center"
         initial={{ opacity: 0 }}
@@ -24,7 +24,7 @@ const PartnersSection = () => {
           <img
             src="images/ABC.webp"
             alt="Company Logo"
-            className="w-40 h-32 p-1 bg-white object-cover mx-auto"
+            className="w-40 h-24 lg:h-32 p-1 bg-white object-cover mx-auto"
           />
         </motion.div>
 
@@ -39,7 +39,7 @@ const PartnersSection = () => {
           <img
             src="images/zentelia.jpg"
             alt="Company Logo"
-            className="w-40 h-32 p-1 bg-white object-contain mx-auto"
+            className="w-40 h-24 lg:h-32 p-1 bg-white object-contain mx-auto"
           />
         </motion.div>
 
@@ -54,7 +54,7 @@ const PartnersSection = () => {
           <img
             src="images/ISTART.webp"
             alt="Company Logo"
-            className="w-40 h-32 p-1 bg-white object-contain mx-auto"
+            className="w-40 h-24 lg:h-32 p-1 bg-white object-contain mx-auto"
           />
         </motion.div>
 
@@ -69,7 +69,7 @@ const PartnersSection = () => {
           <img
             src="images/NITI-AIM-Logo.jpg"
             alt="Company Logo"
-            className="w-40 h-32 p-1 bg-white object-contain mx-auto"
+            className="w-40 h-24 lg:h-32 p-1 bg-white object-contain mx-auto"
           />
         </motion.div>
 
@@ -84,7 +84,7 @@ const PartnersSection = () => {
           <img
             src="images/startup-india.webp"
             alt="Company Logo"
-            className="w-40 h-32 p-1 bg-white object-contain mx-auto"
+            className="w-40 h-24 lg:h-32 p-1 bg-white object-contain mx-auto"
           />
         </motion.div>
       </div>

@@ -14,12 +14,12 @@ const LaptopSection = () => {
   }, []);
 
   // Calculate scale and position based on scroll
-  const scale = Math.min(0.1 + scrollY / 700, 1); // Limit scaling
+  const scale = Math.min(0.1 + scrollY / 300, 1); // Limit scaling
   const translateY = Math.min(scrollY, 75); // Limit the upward translation
 
   return (
     <section
-      className="laptop-section mb-6"
+      className="laptop-section mb-1 lg:mb-6"
       style={{ transform: `translateY(-${translateY}px)` }}
     >
       <div className="laptop">
