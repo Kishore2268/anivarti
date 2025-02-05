@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom"; // Import NavLink
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,13 +18,36 @@ const Header = () => {
 
         {/* Navigation Links */}
         <nav className="hidden md:flex space-x-6">
-          <a href="/" className="text-[#00DEFC] hover:text-blue-500 font-medium">
+          <NavLink
+            to="#banner" // Link to Banner Section
+            className="text-[#00DEFC] hover:text-blue-500 font-medium relative"
+            activeClassName="active" // Active class to trigger the underline animation
+          >
             Home
-          </a>
-          <a href="/contact" className="text-[#00DEFC] hover:text-blue-500 font-medium">
+            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#00DEFC] transition-all duration-300"></span>
+          </NavLink>
+          <NavLink
+            to="#services" // Link to Services Section
+            className="text-[#00DEFC] hover:text-blue-500 font-medium relative"
+            activeClassName="active"
+          >
+            Services
+            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#00DEFC] transition-all duration-300"></span>
+          </NavLink>
+          <NavLink
+            to="#contact" // Link to Contact Section
+            className="text-[#00DEFC] hover:text-blue-500 font-medium relative"
+            activeClassName="active"
+          >
             Contact Us
-          </a>
+            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#00DEFC] transition-all duration-300"></span>
+          </NavLink>
         </nav>
+
+        {/* Book a Call Button */}
+        <button className="bg-[#00DEFC] text-white py-2 px-6 rounded-full font-medium hidden md:block hover:bg-[#009CC3]">
+          Book a Free Consultation
+        </button>
 
         {/* Hamburger Menu Button (Mobile) */}
         <div className="md:hidden">
@@ -46,12 +70,41 @@ const Header = () => {
       {/* Mobile Menu */}
       <div className={`md:hidden ${isMenuOpen ? "block" : "hidden"} bg-white shadow-md transition-all`}>
         <nav className="flex flex-col items-center space-y-4 py-4">
-          <a href="/" className="text-[#00DEFC] hover:text-blue-500 font-medium">
+          <NavLink
+            to="#banner"
+            className="text-[#00DEFC] hover:text-blue-500 font-medium"
+            activeClassName="active"
+          >
             Home
-          </a>
-          <a href="/contact" className="text-[#00DEFC] hover:text-blue-500 font-medium">
+          </NavLink>
+          <NavLink
+            to="#services"
+            className="text-[#00DEFC] hover:text-blue-500 font-medium"
+            activeClassName="active"
+          >
+            Services
+          </NavLink>
+          <NavLink
+            to="#partners"
+            className="text-[#00DEFC] hover:text-blue-500 font-medium"
+            activeClassName="active"
+          >
+            Our Partners
+            </NavLink>
+            <NavLink
+            to="#Testimonials"
+            className="text-[#00DEFC] hover:text-blue-500 font-medium"
+            activeClassName="active"
+          >
+            Testimonials
+            </NavLink>
+          <NavLink
+            to="#contact"
+            className="text-[#00DEFC] hover:text-blue-500 font-medium"
+            activeClassName="active"
+          >
             Contact Us
-          </a>
+          </NavLink>
         </nav>
       </div>
     </header>

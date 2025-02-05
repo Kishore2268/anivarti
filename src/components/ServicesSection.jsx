@@ -1,83 +1,109 @@
-// src/components/ServicesSection.js
 import React from 'react';
-import { FaShoppingCart, FaBullhorn, FaCreditCard, FaTruckMoving, FaSearchDollar, FaCalculator } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+
+import { FaStore, FaCogs, FaShareAlt, FaPen, FaBullhorn, FaCreditCard, FaTruck, FaMoneyBillWave, FaSearch, FaBoxes } from 'react-icons/fa';
+
+const servicesData = [
+  { name: 'Marketplaces', icon: <FaStore />, link: '/marketplaces', iconColor: 'text-blue-500' },
+  { name: 'Marketplace Creation', icon: <FaCogs />, link: '/marketplace-creation', iconColor: 'text-green-500' },
+  { name: 'Social Presence', icon: <FaShareAlt />, link: '/social-presence', iconColor: 'text-pink-500' },
+  { name: 'Branding', icon: <FaPen />, link: '/branding', iconColor: 'text-indigo-500' },
+  { name: 'Marketing', icon: <FaBullhorn />, link: '/marketing', iconColor: 'text-red-500' },
+  { name: 'Payment', icon: <FaCreditCard />, link: '/payment', iconColor: 'text-yellow-500' },
+  { name: 'Logistics', icon: <FaTruck />, link: '/logistics', iconColor: 'text-purple-500' },
+  { name: 'Finance & Accounting', icon: <FaMoneyBillWave />, link: '/finance-accounting', iconColor: 'text-teal-500' },
+  { name: 'Market Research', icon: <FaSearch />, link: '/market-research', iconColor: 'text-indigo-500' },
+  { name: 'Omni Channel Distribution', icon: <FaBoxes />, link: '/omni-channel-distribution', iconColor: 'text-blue-600' }
+];
 
 const ServicesSection = () => {
   return (
-    <section className="py-8 w-[100%] mx-auto">
-      <div className="w-[95%] lg:w-[90%] container mx-auto text-center">
-        {/* Our Services Heading */}
-        <h1 className="px-6 py-3 text-2xl lg:text-3xl text-electricBlue rounded-md font-light tracking-[5px] inline-block mb-2 lg:mb-4">
-          OUR SERVICES
-        </h1>
-        <p className="text-md lg:text-xl text-gray-700 mb-12 tracking-[1px] text-center">
-          We provide comprehensive solutions to help businesses thrive in the
-          digital world, from e-commerce management to logistics and branding.
-        </p>
-        <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-8">
-          {/* Service 1 */}
-          <div className="bg-white p-8 rounded-lg text-center shadow-lg border border-gray-200 transition duration-300 hover:scale-105 hover:shadow-xl hover:border-2 hover:border-electricBlue">
-            <FaShoppingCart className="text-electricBlue text-3xl lg:text-5xl mx-auto" />
-            <h1 className="mt-4 text-lg lg:text-xl font-light text-gray-600 tracking-[3px]">
-              E-COMMERCE
-            </h1>
-            <p className="mt-2 text-md tracking-[1px] text-gray-500 text-start">
-              Comprehensive services for marketplace onboarding and seller portal management to maximize ROI.
-            </p>
-          </div>
-          {/* Service 2 */}
-          <div className="bg-white p-8 rounded-lg text-center shadow-lg border border-gray-200 transition duration-300 hover:scale-105 hover:shadow-xl hover:border-2 hover:border-electricBlue">
-            <FaBullhorn className="text-electricBlue text-3xl lg:text-5xl mx-auto" />
-            <h1 className="mt-4 text-lg lg:text-xl font-light text-gray-600 tracking-[3px]">
-              BRANDING & MARKETING
-            </h1>
-            <p className="mt-2 text-md tracking-[1px] text-gray-500 text-start">
-              Developing strategies to boost brand value and manage ad campaigns for maximizing ROAS.
-            </p>
-          </div>
-          {/* Service 3 */}
-          <div className="bg-white p-8 rounded-lg text-center shadow-lg border border-gray-200 transition duration-300 hover:scale-105 hover:shadow-xl hover:border-2 hover:border-electricBlue">
-            <FaCreditCard className="text-electricBlue text-3xl lg:text-5xl mx-auto" />
-            <h1 className="mt-4 text-lg font-light text-gray-600 tracking-[3px]">
-              PAYMENT
-            </h1>
-            <p className="mt-2 text-md tracking-[1px] text-gray-500 text-start">
-              Integrating top-tier payment gateways to ensure smooth transactions and prevent lost sales.
-            </p>
-          </div>
-          {/* Service 4 */}
-          <div className="bg-white p-8 rounded-lg text-center shadow-lg border border-gray-200 transition duration-300 hover:scale-105 hover:shadow-xl hover:border-2 hover:border-electricBlue">
-            <FaTruckMoving className="text-electricBlue text-3xl lg:text-5xl mx-auto" />
-            <h1 className="mt-4 text-lg lg:text-xl font-light text-gray-700 tracking-[3px]">
-              LOGISTICS
-            </h1>
-            <p className="mt-2 text-md tracking-[1px] text-gray-500 text-start">
-              Partnering with logistics experts for efficient, last-mile global delivery solutions.
-            </p>
-          </div>
-          {/* Service 5 */}
-          <div className="bg-white p-8 rounded-lg text-center shadow-lg border border-gray-200 transition duration-300 hover:scale-105 hover:shadow-xl hover:border-2 hover:border-electricBlue">
-            <FaSearchDollar className="text-electricBlue text-3xl lg:text-5xl mx-auto" />
-            <h1 className="mt-4 text-lg lg:text-xl font-light text-gray-700 tracking-[3px]">
-              MARKET RESEARCH
-            </h1>
-            <p className="mt-2 text-md tracking-[2px]  text-gray-500 text-start">
-              Conducting market research to identify prime business opportunities for your growth.
-            </p>
-          </div>
-          {/* Service 6 */}
-          <div className="bg-white p-8 rounded-lg text-center shadow-lg border border-gray-200 transition duration-300 hover:scale-105 hover:shadow-xl hover:border-2 hover:border-electricBlue">
-            <FaCalculator className="text-electricBlue text-3xl lg:text-5xl mx-auto" />
-            <h1 className="mt-4 text-lg lg:text-xl font-light text-gray-700 tracking-[3px]">
-              ACCOUNTING
-            </h1>
-            <p className="mt-2 text-md tracking-[1px] text-gray-500 text-start">
-              Offering integrated return filing and accounting solutions, with interactive reports.
-            </p>
-          </div>
-        </div>
+    <div className="px-6">
+      {/* Heading and Paragraph */}
+      <div className="text-center my-8">
+        <motion.h2
+          className="text-3xl lg:text-4xl font-semibold text-electricBlue mb-4 lg:mb-8"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{once: true}}
+        >
+          Our Services
+        </motion.h2>
+        <motion.p
+          className="text-lg lg:text-xl mb-4 lg:mb-8 tracking-[1px] text-gray-600"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+          viewport={{once: true}}
+        >
+          We offer a wide range of services to help you succeed in the digital world. Explore our offerings and find the perfect solution for your business.
+        </motion.p>
       </div>
-    </section>
+
+      {/* Service Cards */}
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        {servicesData.map((service, index) => (
+          <motion.div
+            key={index}
+            className="bg-white shadow-lg border border-gray-300 rounded-xl p-2 flex flex-col items-center text-center relative"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.2 * index, duration: 1 }}
+            viewport={{once: true}}
+          >
+            {/* Parallax Text */}
+            <motion.div
+              className="absolute top-2 lg:top-3 left-2 lg:left-3 transform -translate-y-1/2 text-sm lg:text-lg text-gray-500"
+              initial={{ x: -100 }}
+              animate={{x: 0, whileInView:true}}
+              transition={{ type: 'spring', stiffness: 300, delay: 0.2 * index, duration: 2 }}
+              viewport={{once: true}}
+            >
+              #{index + 1 < 10 ? `0${index + 1}` : index + 1}
+            </motion.div>
+
+            {/* Icon */}
+            <motion.div
+              className={`w-8 h-8 lg:w-16 lg:h-16 text-lg lg:text-4xl mb-2 mt-2 lg:mb-4 lg:mt-4 flex items-center justify-center rounded-full ${service.iconColor}`}
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 ,}}
+              transition={{ type: 'spring', stiffness: 300 }}
+              viewport={{once: true}}
+            >
+              {service.icon}
+            </motion.div>
+
+            <motion.h3
+              className="text-md lg:text-xl tracking-[2px] mb-4"
+              initial={{ y: -20 }}
+              whileInView={{ y: 0 }}
+              transition={{ type: 'spring', stiffness: 200 , delay: 0.2*index , duration: 2 }}
+              viewport={{once: true}}
+            >
+              {service.name}
+            </motion.h3>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Read More Button */}
+      <motion.div
+        className="col-span-full flex justify-center mt-8"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{once: true}}
+        transition={{ delay: 1, duration: 0.6 }}
+      >
+        <Link
+          to="/services"
+          className="text-white bg-gradient-to-r from-sky-100 to-electricBlue py-3 px-8 rounded-full text-md lg:text-lg"
+        >
+          Know More About Our Services
+        </Link>
+      </motion.div>
+    </div>
   );
 };
 

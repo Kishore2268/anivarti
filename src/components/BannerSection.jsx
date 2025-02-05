@@ -30,7 +30,7 @@ const BannerSection = () => {
         <div className="w-full text-left">
           {/* Heading Animation */}
           <motion.h1
-            className="text-2xl lg:text-7xl  font-semibold text-electricBlue text-center tracking-[7px]"
+            className="text-2xl lg:text-7xl  font-semibold text-electricBlue text-center tracking-[5px]"
             variants={headingVariants}
             initial="hidden"
             animate="visible"
@@ -40,7 +40,7 @@ const BannerSection = () => {
 
           {/* Paragraph Animation */}
           <motion.p
-            className="mt-12 text-md lg:text-3xl  text-gray-500 w-[95%] lg:w-[70%]  mx-auto text-center tracking-[3px]"
+            className="mt-6 lg:mt-12 text-sm lg:text-3xl  text-gray-500 w-[95%] lg:w-[70%]  mx-auto text-center tracking-[2px]"
             variants={paragraphVariants}
             initial="hidden"
             animate="visible"
@@ -51,7 +51,7 @@ const BannerSection = () => {
 
           {/* Button Animation */}
           <motion.button
-            className="text-gray-700 bg-electricBlue px-6 py-2 mt-12 text-md lg:text-lg  mx-auto flex items-center justify-center tracking-[1px]"
+            className="text-gray-700 bg-electricBlue px-6 py-2 mt-6 lg:mt-12 text-sm lg:text-lg  mx-auto flex items-center justify-center tracking-[1px]"
             variants={buttonVariants}
             initial="hidden"
             animate="visible"
