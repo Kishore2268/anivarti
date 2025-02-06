@@ -23,18 +23,18 @@ const PortfolioSection = () => {
   }, []);
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-2 lg:px-6 py-4 lg:py-16 flex flex-col lg:flex-row items-center gap-10 lg:gap-6 mb-4 lg:mb-8">
+    <div className="bg-[#1a1a1a] w-[95%] lg:w-full lg:max-w-7xl mx-auto px-2 lg:px-6 py-8 lg:py-16  flex flex-col border border-gray-200 rounded-2xl lg:flex-row items-center gap-10 lg:gap-6 mb-16 mt-16 ">
       {/* Left Content */}
       <div className="lg:w-1/2 text-center lg:text-left">
-        <h3 className="text-xl lg:text-5xl tracking-[3px] text-gray-800 mb-4 lg:mb-6">Our Portfolio</h3>
-        <p className="text-sm text-gray-600 lg:text-lg tracking-[2px] mb-6 lg:mb-8">
+        <h3 className="text-xl lg:text-5xl tracking-[3px] font-light lg:tracking-[5px] text-white mb-4 lg:mb-6">Our Portfolio</h3>
+        <p className="text-sm text-gray-300 lg:text-lg tracking-[2px] mb-6 lg:mb-8">
           We collaborate with top-tier brands to deliver outstanding solutions. Our commitment to quality and innovation has built long-lasting partnerships.
         </p>
         <a
           href="https://forms.gle/your-google-form-link" 
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-blue-600 text-white py-3 px-6 rounded-lg  shadow-lg tracking-[1px] hover:bg-blue-700 transition"
+          className="bg-electricBlue text-md lg:text-lg text-white py-3 px-6 rounded-lg  tracking-[1px]  transition"
         >
           Book a Free Consultation
         </a>

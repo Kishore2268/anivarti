@@ -1,28 +1,67 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import BannerSection from "../components/BannerSection";
 import ServicesSection from "../components/ServicesSection";
 import PartnersSection from "../components/PartnersSection";
-import Footer from "../components/Footer";
 import LaptopSection from "../components/LaptopSection";
 import Contact from "../components/Contact";
 import TestimonialSection from "../components/Testimonials";
 import PortfolioSection from "../components/PortfolioSection";
+import { FaArrowUp } from "react-icons/fa"; // Up arrow icon
 
 const HomePage = () => {
+  const [showButton, setShowButton] = useState(false);
+
+  // Show the button when user scrolls down
+  const checkScrollTop = () => {
+    if (!showButton && window.scrollY > 500) {
+      setShowButton(true);
+    } else if (showButton && window.scrollY <= 500) {
+      setShowButton(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", checkScrollTop);
+    return () => window.removeEventListener("scroll", checkScrollTop);
+  }, [showButton]);
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
   return (
     <div className="w-full overflow-hidden">
-      <BannerSection />
+      <section id="banner">
+        <BannerSection />
+      </section>
       <LaptopSection />
-      <ServicesSection />
-      <PartnersSection />
-      <PortfolioSection />
-      <TestimonialSection />
-      <Contact />
-      <hr className="h-1 w-full text-gray-200" />
-      <Footer />
+      <section id="services">
+        <ServicesSection />
+      </section>
+      <section id="partners">
+        <PartnersSection />
+      </section>
+      <section id="portfolio">
+        <PortfolioSection />
+      </section>
+      <section id="testimonials">
+        <TestimonialSection />
+      </section>
+      <section id="contact">
+        <Contact />
+      </section>
+
+      {/* Scroll-to-Top Button */}
+      {showButton && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 p-3 bg-electricBlue text-xl text-gray-950 rounded-full shadow-lg hover:bg-sky-400 focus:outline-none"
+        >
+          <FaArrowUp />
+        </button>
+      )}
     </div>
   );
 };
 
 export default HomePage;
+
 

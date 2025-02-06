@@ -25,33 +25,33 @@ const BannerSection = () => {
   };
 
   return (
-    <section className="h-screen bg-white flex justify-center items-center">
+    <section className="h-screen bg-black flex justify-center items-center">
       <div className="flex flex-col lg:flex-row justify-between items-center w-[95%] lg:w-[85%] px-4">
         <div className="w-full text-left">
           {/* Heading Animation */}
           <motion.h1
-            className="text-2xl lg:text-7xl  font-semibold text-electricBlue text-center tracking-[5px]"
+            className="text-2xl lg:text-7xl  font-semibold text-white text-center tracking-[2px] lg:tracking-[5px]"
             variants={headingVariants}
             initial="hidden"
             animate="visible"
           >
-            Hey,We're ANIVARTI👋
+            Hey,We're <span className="text-2xl lg:text-7xl  font-semibold text-electricBlue text-center tracking-[2px] lg:tracking-[5px]">ANIVARTI👋</span>
           </motion.h1>
 
           {/* Paragraph Animation */}
           <motion.p
-            className="mt-6 lg:mt-12 text-md lg:text-2xl  text-gray-500 w-[95%] lg:w-[70%]  mx-auto text-center tracking-[2px]"
+            className="mt-6 lg:mt-12 text-md lg:text-2xl  text-gray-300 w-[95%] lg:w-[70%]  mx-auto text-center tracking-[1px] lg:tracking-[2px]"
             variants={paragraphVariants}
             initial="hidden"
             animate="visible"
           >
-            Unlock your growth potential with tailored digital solutions. We’ve got everything you need to scale your eCommerce, branding, and
+            Unlock your growth potential with tailored digital solutions. We’ve got everything you need to scale your E-Commerce, branding, and
             operations effortlessly!
           </motion.p>
 
           {/* Button Animation */}
           <motion.button
-            className="text-gray-700 bg-electricBlue px-6 py-2 mt-6 lg:mt-12 text-sm lg:text-lg  mx-auto flex items-center justify-center tracking-[1px]"
+            className="text-white bg-electricBlue px-6 py-2 mt-6 lg:mt-12 text-sm lg:text-lg  mx-auto flex items-center justify-center tracking-[1px]"
             variants={buttonVariants}
             initial="hidden"
             animate="visible"

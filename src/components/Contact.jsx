@@ -6,15 +6,15 @@ const Contact = () => {
   return (
     <div>
       {/* Contact Form Section */}
-      <section className="w-[95%] lg:w-[90%] mx-auto bg-white py-8 mb-4 mt-12 text-center">
+      <section className="w-[95%] lg:w-[90%] mx-auto bg-black py-8 mt-12 text-center">
         <motion.h1
-          className="text-lg lg:text-3xl font-semibold text-black mb-8 tracking-[3px] "
+          className="text-lg lg:text-3xl font-light text-white mb-8 tracking-[3px] "
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 2 }}
         >
-          Your Thoughts Matter! Send us a message, and let's make things right!
+          Your <span className="text-electricBlue">Thoughts Matter!</span> Send us a <span className="text-electricBlue">message</span>, and let's make things <span className="text-electricBlue">right!</span>
         </motion.h1>
 
         <motion.div
@@ -24,14 +24,14 @@ const Contact = () => {
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
-          <h1 className="text-xl lg:text-3xl font-semibold text-black mb-8 tracking-[5px]">
-            Get In Touch
+          <h1 className="text-xl lg:text-3xl font-light text-white mb-8 tracking-[5px]">
+            Get In Touch!
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
             <motion.input
               type="text"
               placeholder="Full Name"
-              className="w-full h-12 border border-gray-400 p-2 rounded-lg"
+              className="w-full h-12 border bg-[#2a2a2a] border-gray-400 p-2 rounded-lg"
               required
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -40,7 +40,7 @@ const Contact = () => {
             <motion.input
               type="email"
               placeholder="Email Address"
-              className="w-full h-12 border border-gray-400 p-2 rounded-lg"
+              className="w-full h-12 border bg-[#2a2a2a] border-gray-400 p-2 rounded-lg"
               required
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -49,7 +49,7 @@ const Contact = () => {
             <motion.input
               type="tel"
               placeholder="Phone Number"
-              className="w-full h-12 border border-gray-400 p-2 rounded-lg"
+              className="w-full h-12 border bg-[#2a2a2a] border-gray-400 p-2 rounded-lg"
               required
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -58,7 +58,7 @@ const Contact = () => {
             <motion.input
               type="text"
               placeholder="Company Name"
-              className="w-full h-12 border border-gray-400 p-2 rounded-lg"
+              className="w-full h-12 border bg-[#2a2a2a] border-gray-400 p-2 rounded-lg"
               required
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -67,7 +67,7 @@ const Contact = () => {
           </div>
           <motion.textarea
             placeholder="Message"
-            className="w-full h-32 border border-gray-400 p-2 mt-4 rounded-lg"
+            className="w-full h-32 border bg-[#2a2a2a] border-gray-400 p-2 mt-4 mb-4 rounded-lg"
             required
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -75,7 +75,7 @@ const Contact = () => {
           ></motion.textarea>
           <motion.button
             type="submit"
-            className="mt-4 bg-electricBlue text-white px-6 py-2 rounded-lg tracking-[1px] hover:bg-blue-700 transition"
+            className="bg-electricBlue text-md lg:text-lg text-white py-2 px-6 rounded-lg  tracking-[1px] transition"
             whileInView={{ opacity: 1 }}
             initial={{ opacity: 0 }}
             transition={{ delay: 1.2 }}
@@ -88,7 +88,7 @@ const Contact = () => {
       {/* Contact Details Section */}
       <section className="py-8 lg:py-16 text-center">
         <motion.h1
-          className="text-xl lg:text-3xl font-bold text-electricBlue mb-8 tracking-[5px]"
+          className="text-2xl lg:text-3xl font-light text-white mb-8 tracking-[5px]"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -102,7 +102,7 @@ const Contact = () => {
             href="https://www.google.com/maps/search/?api=1&query=Plot+No.+22,+Govind+Vihar+Sanganer,+Jaipur+302022"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center p-4 rounded-lg w-full lg:w-auto hover:bg-gray-200 transition"
+            className="flex items-center p-4  rounded-lg w-full lg:w-auto hover:bg-gray-700 transition"
             whileInView={{ opacity: 1 }}
             initial={{ opacity: 0 }}
             transition={{ delay: 0.3 }}
@@ -118,8 +118,8 @@ const Contact = () => {
               <FaMapMarkerAlt className="text-electricBlue text-4xl mr-4" />
             </motion.div>
             <div className="text-left">
-              <h3 className="text-lg font-semibold text-gray-700">Address</h3>
-              <p className="text-gray-500 text-md">
+              <h3 className="text-xl tracking-[2px] text-white">Address</h3>
+              <p className="text-gray-300 text-md lg:text-lg">
                 Plot No. 22, Govind Vihar Sanganer, Jaipur 302022
               </p>
             </div>
@@ -128,7 +128,7 @@ const Contact = () => {
           {/* Email */}
           <motion.a
             href="mailto:office@anivati.in"
-            className="flex items-center p-4 rounded-lg w-full lg:w-auto hover:bg-gray-200 transition"
+            className="flex items-center p-4 rounded-lg w-full lg:w-auto hover:bg-gray-700 transition"
             whileInView={{ opacity: 1 }}
             initial={{ opacity: 0 }}
             transition={{ delay: 0.6 }}
@@ -149,15 +149,15 @@ const Contact = () => {
             </motion.div>
 
             <div className="text-left">
-              <h3 className="text-lg font-semibold text-gray-700">Email</h3>
-              <p className="text-gray-500">office@anivati.in</p>
+              <h3 className="text-xl tracking-[2px] text-white">Email</h3>
+              <p className="text-gray-300 text-md lg:text-lg">office@anivati.in</p>
             </div>
           </motion.a>
 
           {/* Mobile Number */}
           <motion.a
             href="tel:8955578234"
-            className="flex items-center p-2 rounded-4xl w-full lg:w-auto hover:bg-gray-200 transition"
+            className="flex items-center p-2 rounded-4xl w-full lg:w-auto hover:bg-gray-700 transition"
             whileInView={{ opacity: 1 }}
             initial={{ opacity: 0 }}
             transition={{ delay: 0.9 }}
@@ -184,10 +184,10 @@ const Contact = () => {
             </motion.div>
 
             <div className="text-left">
-              <h3 className="text-lg font-semibold text-gray-700">
+              <h3 className="text-xl tracking-[2px] text-white">
                 Mobile Number
               </h3>
-              <p className="text-gray-500">8955578234</p>
+              <p className="text-gray-300 text-md lg:text-lg">8955578234</p>
             </div>
           </motion.a>
         </div>

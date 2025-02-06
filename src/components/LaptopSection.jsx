@@ -19,7 +19,7 @@ const LaptopSection = () => {
 
   return (
     <section
-      className="laptop-section mb-1 lg:mb-6"
+      className="laptop-section mb-1 bg-black lg:mb-6"
       style={{ transform: `translateY(-${translateY}px)` }}
     >
       <div className="laptop">
