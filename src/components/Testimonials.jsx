@@ -46,7 +46,7 @@ const TestimonialSection = () => {
 
   return (
     <div className="w-full max-w-6xl mx-auto text-center py-8 lg:py-16">
-      <h2 className="text-xl lg:text-4xl  text-white mb-8">
+      <h2 className="text-xl lg:text-4xl tracking-[3px] text-white mb-8">
         What Our Clients Say About Us
       </h2>
 

@@ -23,7 +23,8 @@ const PortfolioSection = () => {
   }, []);
 
   return (
-    <div className="bg-[#1a1a1a] w-[95%] lg:w-full lg:max-w-7xl mx-auto px-2 lg:px-6 py-8 lg:py-16  flex flex-col border border-gray-200 rounded-2xl lg:flex-row items-center gap-10 lg:gap-6 mb-16 mt-16 ">
+    <div className="py-24">
+    <div className="bg-[#1a1a1a] w-[95%] lg:w-full lg:max-w-7xl mx-auto px-2 lg:px-6 py-8 lg:py-16  flex flex-col border border-gray-200 rounded-2xl lg:flex-row items-center gap-10 lg:gap-6">
       {/* Left Content */}
       <div className="lg:w-1/2 text-center lg:text-left">
         <h3 className="text-xl lg:text-5xl tracking-[3px] font-light lg:tracking-[5px] text-white mb-4 lg:mb-6">Our Portfolio</h3>
@@ -62,6 +63,7 @@ const PortfolioSection = () => {
           </Reorder.Item>
         ))}
       </Reorder.Group>
+    </div>
     </div>
   );
 };

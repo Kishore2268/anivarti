@@ -1,21 +1,59 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
   const headerHeight = 100;
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Function to handle scroll position and set active section
+  const handleScroll = () => {
+    const sections = [
+      "services",
+      "partners",
+      "portfolio",
+      "testimonials",
+      "contact",
+    ];
+    let currentSection = "";
+
+    sections.forEach((sectionId) => {
+      const section = document.getElementById(sectionId);
+      if (
+        section &&
+        section.getBoundingClientRect().top - headerHeight <= 100 &&
+        section.getBoundingClientRect().bottom - headerHeight > 100
+      ) {
+        currentSection = sectionId;
+      }
+    });
+
+    setActiveSection(currentSection);
+  };
+
+  // Adding scroll event listener
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
       window.scrollTo({
-        top: section.offsetTop - headerHeight, // Apply offset to avoid header overlap
+        top: section.offsetTop - headerHeight,
         behavior: "smooth",
       });
+
+      // Trigger handleScroll after a slight delay to allow the scroll to complete
+      setTimeout(() => {
+        handleScroll();
+      }, 100); // Adjust the delay as needed (in ms)
     }
   };
 
@@ -37,37 +75,59 @@ const Header = () => {
         <nav className="hidden md:flex space-x-8">
           <a
             href="/"
-            className="text-white hover:text-[#00DEFC] font-medium relative"
+            className={`relative text-white font-medium hover:text-[#00DEFC] pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+              activeSection === "" ? "text-[#00DEFC] after:scale-x-100" : ""
+            }`}
           >
             Home
           </a>
           <button
             onClick={() => scrollToSection("services")}
-            className="text-white hover:text-[#00DEFC] font-medium relative"
+            className={`relative text-white font-medium hover:text-[#00DEFC] pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+              activeSection === "services"
+                ? "text-[#00DEFC] after:scale-x-100"
+                : ""
+            }`}
           >
             Services
           </button>
           <button
             onClick={() => scrollToSection("partners")}
-            className="text-white hover:text-[#00DEFC] font-medium relative"
+            className={`relative text-white font-medium hover:text-[#00DEFC] pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+              activeSection === "partners"
+                ? "text-[#00DEFC] after:scale-x-100"
+                : ""
+            }`}
           >
             Our Partners
           </button>
           <button
             onClick={() => scrollToSection("portfolio")}
-            className="text-white hover:text-[#00DEFC] font-medium relative"
+            className={`relative text-white font-medium hover:text-[#00DEFC] pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+              activeSection === "portfolio"
+                ? "text-[#00DEFC] after:scale-x-100"
+                : ""
+            }`}
           >
             Portfolio
           </button>
           <button
             onClick={() => scrollToSection("testimonials")}
-            className="text-white hover:text-[#00DEFC] font-medium relative"
+            className={`relative text-white font-medium hover:text-[#00DEFC] pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+              activeSection === "testimonials"
+                ? "text-[#00DEFC] after:scale-x-100"
+                : ""
+            }`}
           >
             Testimonials
           </button>
           <button
             onClick={() => scrollToSection("contact")}
-            className="text-white hover:text-[#00DEFC] font-medium relative"
+            className={`relative text-white font-medium hover:text-[#00DEFC] pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+              activeSection === "contact"
+                ? "text-[#00DEFC] after:scale-x-100"
+                : ""
+            }`}
           >
             Contact Us
           </button>
@@ -135,37 +195,59 @@ const Header = () => {
         <nav className="flex flex-col items-center space-y-6 py-6 px-4">
           <a
             href="/"
-            className="text-white hover:text-[#00DEFC] font-medium relative"
+            className={`relative text-white font-medium hover:text-[#00DEFC] pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+              activeSection === "" ? "text-[#00DEFC] after:scale-x-100" : ""
+            }`}
           >
             Home
           </a>
           <button
             onClick={() => scrollToSection("services")}
-            className="text-white hover:text-[#00DEFC] font-medium text-xl"
+            className={`relative text-white font-medium hover:text-[#00DEFC] text-xl pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+              activeSection === "services"
+                ? "text-[#00DEFC] after:scale-x-100"
+                : ""
+            }`}
           >
             Services
           </button>
           <button
             onClick={() => scrollToSection("partners")}
-            className="text-white hover:text-[#00DEFC] font-medium text-xl"
+            className={`relative text-white font-medium hover:text-[#00DEFC] text-xl pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+              activeSection === "partners"
+                ? "text-[#00DEFC] after:scale-x-100"
+                : ""
+            }`}
           >
             Our Partners
           </button>
           <button
             onClick={() => scrollToSection("portfolio")}
-            className="text-white hover:text-[#00DEFC] font-medium text-xl"
+            className={`relative text-white font-medium hover:text-[#00DEFC] text-xl pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+              activeSection === "portfolio"
+                ? "text-[#00DEFC] after:scale-x-100"
+                : ""
+            }`}
           >
             Portfolio
           </button>
           <button
             onClick={() => scrollToSection("testimonials")}
-            className="text-white hover:text-[#00DEFC] font-medium text-xl"
+            className={`relative text-white font-medium hover:text-[#00DEFC] text-xl pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+              activeSection === "testimonials"
+                ? "text-[#00DEFC] after:scale-x-100"
+                : ""
+            }`}
           >
             Testimonials
           </button>
           <button
             onClick={() => scrollToSection("contact")}
-            className="text-white hover:text-[#00DEFC] font-medium text-xl"
+            className={`relative text-white font-medium hover:text-[#00DEFC] text-xl pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+              activeSection === "contact"
+                ? "text-[#00DEFC] after:scale-x-100"
+                : ""
+            }`}
           >
             Contact Us
           </button>

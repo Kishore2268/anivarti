@@ -4,18 +4,15 @@ import { motion } from "framer-motion";
 const LaptopSection = () => {
   const [scrollY, setScrollY] = useState(0);
 
-  const handleScroll = () => {
-    setScrollY(window.scrollY);
-  };
-
   useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Calculate scale and position based on scroll
-  const scale = Math.min(0.1 + scrollY / 300, 1); // Limit scaling
-  const translateY = Math.min(scrollY, 75); // Limit the upward translation
+  const scale = Math.min(0.1 + scrollY / 600, 1); // Smooth scaling
+  const opacity = Math.max(1 - scrollY / 600, 0); // Fade effect
+  const translateY = Math.min(scrollY, 100); // Limit the upward translation
 
   return (
     <section
@@ -25,15 +22,23 @@ const LaptopSection = () => {
       <div className="laptop">
         <div className="screen">
           <div className="lcd">
-            {/* Background image placed inside the laptop screen */}
+            {/* Animated background scales up */}
             <motion.img
               src="https://cdn.prod.website-files.com/64710a58deace073b8c4a98a/64724218cb63b9f6b8d27c3c_her-final.webp"
               alt="Laptop Screen"
               className="screen-bg"
+              style={{ transformOrigin: "center" }}
               animate={{
                 scale: scale,
-                transition: { type: "spring", stiffness: 200, damping: 20 },
+                transition: { type: "spring", stiffness: 100, damping: 20 },
               }}
+            />
+            {/* Default image fades out */}
+            <motion.img
+              src="https://cdn.prod.website-files.com/64710a58deace073b8c4a98a/64710a58deace073b8c4abaa_Hero%20BG%20Image.webp"
+              alt="Gradient Laptop Screen"
+              className="default-screen"
+              animate={{ opacity: opacity }}
             />
           </div>
           <div className="glass_frame"></div>
@@ -47,3 +52,4 @@ const LaptopSection = () => {
 };
 
 export default LaptopSection;
+
