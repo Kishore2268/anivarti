@@ -64,9 +64,9 @@ const Header = () => {
         <div className="text-2xl font-bold">
           <a href="/">
             <img
-              src="/images/anivarti-logo.jpg"
+              src="/images/anivarti-logo-1.jpg"
               alt="Anivarti Logo"
-              className="h-16 w-auto rounded-md"
+              className="h-10 md:h-16 px-2 bg-transparent w-auto rounded-md"
             />
           </a>
         </div>

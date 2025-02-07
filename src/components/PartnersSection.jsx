@@ -1,5 +1,3 @@
-import { FaHandshake } from "react-icons/fa";
-
 const PartnersSection = () => {
   const logos = [
     { src: "images/ABC.webp" },
@@ -23,12 +21,6 @@ const PartnersSection = () => {
       {/* Scrolling logos container */}
       <div className="logos-container">
         <div className="scrolling-logos">
-          {/* "Our Partners" text as the first item */}
-          <div className="text-white text-xl lg:text-3xl tracking-[3px] font-light flex items-center gap-2">
-            <FaHandshake className="text-yellow-500 text-2xl lg:text-4xl" />
-            <span>Our Partners:</span>
-          </div>
-
           {logos.map((logo, index) => (
             <div key={index} className="logo-item">
               <img
@@ -39,12 +31,6 @@ const PartnersSection = () => {
               />
             </div>
           ))}
-
-          {/* Duplicate logos for smooth scrolling */}
-          <div className="text-white text-xl lg:text-3xl tracking-[3px] font-light flex items-center gap-2">
-            <FaHandshake className="text-yellow-500 text-2xl lg:text-4xl" />
-            <span>Our Partners:</span>
-          </div>
 
           {logos.map((logo, index) => (
             <div key={`dup-${index}`} className="logo-item">

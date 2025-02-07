@@ -35,7 +35,10 @@ const BannerSection = () => {
             initial="hidden"
             animate="visible"
           >
-            Hey,We're <span className="text-2xl lg:text-7xl  font-semibold text-electricBlue text-center tracking-[2px] lg:tracking-[5px]">ANIVARTI👋</span>
+            Hey,We're{" "}
+            <span className="text-2xl lg:text-7xl  font-semibold text-electricBlue text-center tracking-[2px] lg:tracking-[5px]">
+              ANIVARTI👋
+            </span>
           </motion.h1>
 
           {/* Paragraph Animation */}
@@ -45,8 +48,9 @@ const BannerSection = () => {
             initial="hidden"
             animate="visible"
           >
-            Unlock your growth potential with tailored digital solutions. We’ve got everything you need to scale your E-Commerce, branding, and
-            operations effortlessly!
+            One-stop solution for D2C brands and B2B companies,
+            helping them scale, expand market reach, and optimize operations
+            with customized strategies for growth and efficiency.
           </motion.p>
 
           {/* Button Animation */}
