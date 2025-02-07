@@ -13,6 +13,7 @@ import {
   FaMoneyBillWave,
   FaSearch,
   FaBoxes,
+  FaArrowRight,
 } from "react-icons/fa";
 
 const servicesData = [
@@ -80,7 +81,7 @@ const servicesData = [
 
 const ServicesSection = () => {
   return (
-    <div className="px-2 bg-black lg:px-12 mb-12">
+    <div className="px-2 bg-black lg:px-12 py-6">
       {/* Heading and Paragraph */}
       <div className="text-center">
         <motion.h2
@@ -160,9 +161,10 @@ const ServicesSection = () => {
         <Link
           to="/services"
           onClick={() => window.scrollTo(0, 0)} // Scroll to top when navigating to services
-          className="text-white bg-electricBlue py-3 px-8 rounded-full tracking-[1px] text-md lg:text-lg transition duration-300"
+          className="text-white bg-electricBlue py-3 px-8 rounded-full tracking-[1px] text-md lg:text-lg transition duration-300 flex items-center gap-2"
         >
           Know More About Our Services
+          <FaArrowRight className="text-white text-lg transition-transform duration-300 group-hover:translate-x-1" />
         </Link>
       </motion.div>
     </div>

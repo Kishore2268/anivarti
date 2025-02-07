@@ -46,7 +46,7 @@ const TestimonialSection = () => {
 
   return (
     <div className="w-full max-w-6xl mx-auto text-center py-8 lg:py-16">
-      <h2 className="text-xl lg:text-4xl tracking-[3px] text-white mb-8">
+      <h2 className="text-xl lg:text-4xl tracking-[2px] lg:tracking-[5px] text-white mb-8">
         What Our Clients Say About Us
       </h2>
 
@@ -84,6 +84,7 @@ const TestimonialSection = () => {
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
+                    loading="lazy"
                     className="w-16 h-16 md:w-24 md:h-24 lg:w-32 lg:h-32 rounded-full mx-auto mb-3"
                   />
                   <h4 className="text-sm md:text-md lg:text-xl tracking-[1px] text-white mb-1">

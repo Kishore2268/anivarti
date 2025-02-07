@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {useCallback , useState, useEffect } from "react";
 import BannerSection from "../components/BannerSection";
 import ServicesSection from "../components/ServicesSection";
 import PartnersSection from "../components/PartnersSection";
@@ -11,19 +11,18 @@ import { FaArrowUp } from "react-icons/fa"; // Up arrow icon
 const HomePage = () => {
   const [showButton, setShowButton] = useState(false);
 
-  // Show the button when user scrolls down
-  const checkScrollTop = () => {
+  const checkScrollTop = useCallback(() => {
     if (!showButton && window.scrollY > 500) {
       setShowButton(true);
     } else if (showButton && window.scrollY <= 500) {
       setShowButton(false);
     }
-  };
-
+  }, [showButton]);
+  
   useEffect(() => {
     window.addEventListener("scroll", checkScrollTop);
     return () => window.removeEventListener("scroll", checkScrollTop);
-  }, [showButton]);
+  }, [checkScrollTop]);
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
@@ -53,7 +52,7 @@ const HomePage = () => {
       {showButton && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 p-3 bg-electricBlue text-xl text-gray-950 rounded-full shadow-lg hover:bg-sky-400 focus:outline-none"
+          className="fixed bottom-4 right-4 lg:bottom-8 lg:right-8 p-3 bg-electricBlue text-xl text-gray-950 z-50 rounded-full shadow-lg hover:bg-sky-400 focus:outline-none"
         >
           <FaArrowUp />
         </button>

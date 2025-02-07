@@ -41,7 +41,7 @@ const services = [
   {
     title: "Logistics",
     description:
-      "Leverage Our Established Network of Logistics Partners for Seamless, Plug-and-Play Last-Mile Delivery Across the Globe.",
+      "Leverage Our Established Network of Logistics Partners for Seamless, Plug-and-Play Last-Mile Delivery Across the Country.",
     image: "images/logistics.webp",
   },
   {
@@ -66,15 +66,15 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="mt-20 py-16">
+    <section className="py-24">
       {/* Main Heading */}
-      <h2 className="text-center text-2xl lg:text-5xl tracking-[3px]font-bold text-white mb-12">
+      <h2 className="text-center text-2xl lg:text-5xl tracking-[3px] lg:tracking-[5px]font-bold text-white mb-12">
         Our <span className="text-electricBlue">10Kadum</span> Solution for D2C
         Brands
       </h2>
 
       {/* Services List */}
-      <div className="max-w-6xl mx-auto px-2 space-y-12 lg:space-y-16">
+      <div className="max-w-6xl mx-auto px-2 md:px-6 lg:px-0 space-y-12 lg:space-y-16">
         {services.map((service, index) => (
           <motion.div
             key={index}
@@ -90,14 +90,15 @@ const Services = () => {
             <img
               src={service.image}
               alt={service.title}
-              className="w-96 md:w-96 lg:w-1/2 h-72 object-cover rounded-lg shadow-md"
+              loading="lazy"
+              className="w-96 md:w-112 lg:w-1/2 h-72 object-cover rounded-lg shadow-md"
             />
             {/* Content */}
-            <div className="md:w-1/2 text-center md:text-left px-6">
-              <h3 className="text-md md:text-lg lg:text-3xl tracking-[1px] md:tracking-[2px] text-white mb-6">
+            <div className="md:w-1/2 text-center md:text-left px-0 lg:px-6">
+              <h3 className="text-lg md:text-xl lg:text-3xl tracking-[3px] md:tracking-[5px] text-white  mb-3 lg:mb-6">
                 {service.title}
               </h3>
-              <p className="text-sm md:text-md lg:text-lg tracking-[1px] md:tracking-[2px] text-gray-300 mt-2">
+              <p className="text-sm md:text-md lg:text-lg tracking-[2px] md:tracking-[3px] text-gray-300 mt-2">
                 {service.description}
               </p>
             </div>
@@ -106,30 +107,35 @@ const Services = () => {
       </div>
 
       {/* Collaboration Section */}
-      <div className="text-center mt-16 py-16">
-        <div className="w-full flex max-w-6xl bg-[#1a1a1a] border border-gray-400 rounded-xl p-8 gap-8 mx-auto justify-center items-center">
-          <div className="flex flex-col w-2/3">
-            <h3 className="text-xl lg:text-3xl text-white font-semibold tracking-[2px] mb-4 lg:mb-6">
-              Wanna collaborate with us and scale up your business?
+      <div className="text-center py-16 px-4">
+        <h2 className="text-2xl lg:text-4xl font-bold text-white mb-8 tracking-wide">
+          What are you waiting for?
+        </h2>
+        <div className="w-full flex flex-col md:flex-row max-w-6xl bg-[#1a1a1a] border border-gray-400 rounded-2xl p-6 lg:p-10 gap-4 lg:gap-8 mx-auto justify-between items-center shadow-lg">
+          {/* Text Section */}
+          <div className="flex flex-col w-full md:w-2/3 text-center md:text-left">
+            <h3 className="text-xl lg:text-3xl text-white font-semibold tracking-wide mb-4 lg:mb-6">
+              Let's collaborate with us and scale up your business
             </h3>
-            <p className="text-gray-300 text-md lg:text-lg mb-6">
-              Let's take your brand to the next level with our expert solutions.
-              We specialize in providing top-notch services to help your
-              business thrive.
+            <p className="text-gray-300 text-sm tracking-[1px] lg:tracking-[2px] lg:text-lg mb-0 lg:mb-6">
+              Take your brand to the next level with our expert solutions. We
+              provide top-notch services to help your business thrive.
             </p>
           </div>
-          <div className="w-1/3 flex flex-col items-center justify-center">
-            {/* Image above CTA */}
+
+          {/* Image + Button Section */}
+          <div className="w-full md:w-1/3 flex flex-col items-center">
             <img
-              src="/images/collab.webp" // Replace with your image path
+              src="/images/collab.webp"
               alt="Collaboration"
-              className="w-48 h-32 mb-6 object-cover rounded-lg shadow-lg"
+              loading="lazy"
+              className="w-44 h-32 mb-6 object-cover hidden md:block rounded-xl shadow-md"
             />
             <a
-              href="https://forms.google.com/your-form-link" // Replace with your Google Form link
+              href="https://forms.google.com/your-form-link"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-electricBlue text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-sky-600 transition"
+              className="bg-electricBlue text-white px-6 py-3 rounded-xl font-semibold text-md lg:text-lg tracking-[1px] lg:tracking-[3px] hover:bg-sky-600 transition duration-300"
             >
               Book a Free Consultation
             </a>

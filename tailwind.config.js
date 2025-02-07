@@ -6,13 +6,16 @@ module.exports = {
     extend: {
       //custom screen breakpoints
       screens: {
-        '3xl': '1920px', // Add a 3xl breakpoint
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
       },
       //custom colors
       colors: {
         darkBlue: '#0A244A',
         skyBlue: '#5DADE2',
-        electricBlue: '#00DEFC',
+        electricBlue: '#00CFFC',
         darkGray: '#1C1C1E',
         lightGray: '#F2F2F2',
       },

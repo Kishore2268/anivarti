@@ -12,11 +12,11 @@ const LaptopSection = () => {
 
   const scale = Math.min(0.1 + scrollY / 600, 1); // Smooth scaling
   const opacity = Math.max(1 - scrollY / 600, 0); // Fade effect
-  const translateY = Math.min(scrollY, 100); // Limit the upward translation
+  const translateY = Math.min(scrollY/600, 100); // Limit the upward translation
 
   return (
     <section
-      className="laptop-section mb-1 bg-black lg:mb-6"
+      className="laptop-section mb-8 bg-black lg:mb-12"
       style={{ transform: `translateY(-${translateY}px)` }}
     >
       <div className="laptop">
@@ -28,6 +28,7 @@ const LaptopSection = () => {
               alt="Laptop Screen"
               className="screen-bg"
               style={{ transformOrigin: "center" }}
+              loading="lazy"
               animate={{
                 scale: scale,
                 transition: { type: "spring", stiffness: 100, damping: 20 },
@@ -38,6 +39,7 @@ const LaptopSection = () => {
               src="https://cdn.prod.website-files.com/64710a58deace073b8c4a98a/64710a58deace073b8c4abaa_Hero%20BG%20Image.webp"
               alt="Gradient Laptop Screen"
               className="default-screen"
+              loading="lazy"
               animate={{ opacity: opacity }}
             />
           </div>

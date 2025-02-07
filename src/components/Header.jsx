@@ -53,13 +53,13 @@ const Header = () => {
       // Trigger handleScroll after a slight delay to allow the scroll to complete
       setTimeout(() => {
         handleScroll();
-      }, 100); // Adjust the delay as needed (in ms)
+      }, 900); // Adjust the delay as needed (in ms)
     }
   };
 
   return (
     <header className="fixed top-0 left-0 w-full bg-black bg-opacity-40 backdrop-blur-md shadow-lg border-b border-gray-400 z-50">
-      <div className="flex justify-between items-center w-[95%] lg:w-[80%] mx-auto py-2 px-4">
+      <div className="flex justify-between items-center w-[95%] md:w-[90%] lg:w-[95%] mx-auto py-2 px-4">
         {/* Logo */}
         <div className="text-2xl font-bold">
           <a href="/">
@@ -72,18 +72,18 @@ const Header = () => {
         </div>
 
         {/* Navigation Links */}
-        <nav className="hidden md:flex space-x-8">
-          <a
-            href="/"
-            className={`relative text-white font-medium hover:text-[#00DEFC] pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+        <nav className="hidden lg:flex space-x-8">
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className={`relative text-white text-md xl:text-lg font-medium hover:text-[#00DEFC] pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
               activeSection === "" ? "text-[#00DEFC] after:scale-x-100" : ""
             }`}
           >
             Home
-          </a>
+          </button>
           <button
             onClick={() => scrollToSection("services")}
-            className={`relative text-white font-medium hover:text-[#00DEFC] pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+            className={`relative text-white text-md xl:text-lg font-medium hover:text-[#00DEFC] pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
               activeSection === "services"
                 ? "text-[#00DEFC] after:scale-x-100"
                 : ""
@@ -93,7 +93,7 @@ const Header = () => {
           </button>
           <button
             onClick={() => scrollToSection("partners")}
-            className={`relative text-white font-medium hover:text-[#00DEFC] pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+            className={`relative text-white text-md xl:text-lg font-medium hover:text-[#00DEFC] pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
               activeSection === "partners"
                 ? "text-[#00DEFC] after:scale-x-100"
                 : ""
@@ -103,7 +103,7 @@ const Header = () => {
           </button>
           <button
             onClick={() => scrollToSection("portfolio")}
-            className={`relative text-white font-medium hover:text-[#00DEFC] pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+            className={`relative text-white text-md xl:text-lg font-medium hover:text-[#00DEFC] pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
               activeSection === "portfolio"
                 ? "text-[#00DEFC] after:scale-x-100"
                 : ""
@@ -113,7 +113,7 @@ const Header = () => {
           </button>
           <button
             onClick={() => scrollToSection("testimonials")}
-            className={`relative text-white font-medium hover:text-[#00DEFC] pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+            className={`relative text-white text-md xl:text-lg font-medium hover:text-[#00DEFC] pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
               activeSection === "testimonials"
                 ? "text-[#00DEFC] after:scale-x-100"
                 : ""
@@ -123,7 +123,7 @@ const Header = () => {
           </button>
           <button
             onClick={() => scrollToSection("contact")}
-            className={`relative text-white font-medium hover:text-[#00DEFC] pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+            className={`relative text-white text-md xl:text-lgfont-medium hover:text-[#00DEFC] pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
               activeSection === "contact"
                 ? "text-[#00DEFC] after:scale-x-100"
                 : ""
@@ -139,13 +139,13 @@ const Header = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button className="bg-[#00DEFC] text-white py-2 lg:px-6 hidden lg:block rounded-full font-medium hover:bg-[#009CC3]">
+          <button className="bg-[#00DEFC] text-md xl:text-lg tracking-[1px] text-white py-2 lg:px-6 hidden lg:block rounded-full font-medium hover:bg-[#009CC3]">
             Book a Free Consultation
           </button>
         </a>
 
         {/* Mobile Menu */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <button
             onClick={toggleMenu}
             className="text-white"
@@ -258,7 +258,7 @@ const Header = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button className="bg-[#00DEFC] text-white py-2 px-2 lg:px-6 rounded-full font-medium hover:bg-[#009CC3]">
+            <button className="bg-[#00DEFC] text-white py-2 px-4 lg:px-6 rounded-full font-medium hover:bg-[#009CC3]">
               Book a Free Consultation
             </button>
           </a>

@@ -63,104 +63,112 @@ const Contact = () => {
     <div>
       {/* Contact Form Section */}
       <section className="w-[95%] lg:w-[90%] mx-auto bg-black py-24 text-center">
-        <motion.h1
-          className="text-lg lg:text-3xl font-light text-white mb-8 tracking-[3px]"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 2 }}
-        >
-          Your <span className="text-electricBlue">Thoughts Matter!</span> Send
-          us a <span className="text-electricBlue">message</span>, and let's
-          make things <span className="text-electricBlue">work!</span>
-        </motion.h1>
+  <motion.h1
+    className="text-lg lg:text-3xl font-light text-white mb-8 tracking-[3px]"
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    viewport={{ once: true }}
+    transition={{ duration: 2 }}
+  >
+    Your <span className="text-electricBlue">Thoughts Matter!</span> Send us a{" "}
+    <span className="text-electricBlue">message</span>, and let's make things{" "}
+    <span className="text-electricBlue">work!</span>
+  </motion.h1>
 
-        <motion.div
-          className="w-[95%] lg:w-[80%] mx-auto p-6 rounded-xl border border-gray-300 shadow-xl"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-        >
-          <h1 className="text-xl lg:text-3xl font-light text-white mb-8 tracking-[5px]">
-            Get In Touch!
-          </h1>
-          <form onSubmit={handleSubmit}>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-              <motion.input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Full Name"
-                className="w-full h-12 border bg-[#2a2a2a] border-gray-400 p-2 rounded-lg"
-                required
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2 }}
-              />
-              <motion.input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Email Address"
-                className="w-full h-12 border bg-[#2a2a2a] border-gray-400 p-2 rounded-lg"
-                required
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4 }}
-              />
-              <motion.input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder="Phone Number"
-                className="w-full h-12 border bg-[#2a2a2a] border-gray-400 p-2 rounded-lg"
-                required
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.6 }}
-              />
-              <motion.input
-                type="text"
-                name="company"
-                value={formData.company}
-                onChange={handleChange}
-                placeholder="Company Name"
-                className="w-full h-12 border bg-[#2a2a2a] border-gray-400 p-2 rounded-lg"
-                required
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.8 }}
-              />
-            </div>
-            <motion.textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="Message"
-              className="w-full h-32 border bg-[#2a2a2a] border-gray-400 p-2 mt-4 mb-4 rounded-lg"
-              required
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1 }}
-            ></motion.textarea>
-            <motion.button
-              type="submit"
-              className="bg-electricBlue text-md lg:text-lg text-white py-2 px-6 rounded-lg tracking-[1px] transition"
-              whileInView={{ opacity: 1 }}
-              initial={{ opacity: 0 }}
-              transition={{ delay: 1.2 }}
-              disabled={isLoading}
-            >
-              {isLoading ? "Sending..." : "Send Message"}
-            </motion.button>
-          </form>
-          {statusMessage && <p className="text-white mt-4">{statusMessage}</p>}
-        </motion.div>
-      </section>
+  <motion.div
+    className="w-[95%] lg:w-[80%] mx-auto p-6 rounded-xl border border-gray-300 shadow-xl"
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 1 }}
+  >
+    <h1 className="text-xl lg:text-3xl font-light text-white mb-8 tracking-[5px]">
+      Get In Touch!
+    </h1>
+    <form onSubmit={handleSubmit}>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Left side inputs */}
+        <div className="flex flex-col gap-4">
+          <motion.input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Full Name"
+            className="w-full h-12 border bg-[#2a2a2a] text-white border-gray-400 p-2 rounded-2xl"
+            required
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+          />
+          <motion.input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Email Address"
+            className="w-full h-12 border bg-[#2a2a2a] text-white border-gray-400 p-2 rounded-2xl"
+            required
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4 }}
+          />
+          <motion.input
+            type="tel"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            placeholder="Phone Number"
+            className="w-full h-12 border bg-[#2a2a2a] text-white border-gray-400 p-2 rounded-2xl"
+            required
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.6 }}
+          />
+          <motion.input
+            type="text"
+            name="company"
+            value={formData.company}
+            onChange={handleChange}
+            placeholder="Company Name"
+            className="w-full h-12 border bg-[#2a2a2a] text-white border-gray-400 p-2 rounded-2xl"
+            required
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.8 }}
+          />
+        </div>
+
+        {/* Right side - Message Box */}
+        <motion.textarea
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          placeholder="Message"
+          className="w-full h-full min-h-[200px] border text-white bg-[#2a2a2a] border-gray-400 p-2 rounded-2xl"
+          required
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ delay: 1 }}
+        ></motion.textarea>
+      </div>
+
+      {/* Submit Button - Centered */}
+      <motion.button
+        type="submit"
+        className="mt-6 bg-electricBlue text-md lg:text-lg text-white py-2 px-6 rounded-2xl tracking-[1px] transition hover:bg-sky-400"
+        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+        transition={{ delay: 1.2 }}
+        disabled={isLoading}
+      >
+        {isLoading ? "Sending..." : "Send Message"}
+      </motion.button>
+    </form>
+    {statusMessage && <p className="text-white mt-4">{statusMessage}</p>}
+  </motion.div>
+</section>
+
 
       {/* Contact Details Section */}
       <section className="py-8 lg:py-16 text-center">

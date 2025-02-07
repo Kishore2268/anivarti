@@ -24,10 +24,10 @@ const PortfolioSection = () => {
 
   return (
     <div className="py-24">
-    <div className="bg-[#1a1a1a] w-[95%] lg:w-full lg:max-w-7xl mx-auto px-2 lg:px-6 py-8 lg:py-16  flex flex-col border border-gray-200 rounded-2xl lg:flex-row items-center gap-10 lg:gap-6">
+    <div className="bg-[#1a1a1a] w-[95%] md:w-[90%] lg:w-[98%] lg:max-w-7xl mx-auto px-2 py-8 lg:px-6  lg:py-12  flex flex-col border border-gray-200 rounded-2xl lg:flex-row items-center gap-10 lg:gap-6">
       {/* Left Content */}
       <div className="lg:w-1/2 text-center lg:text-left">
-        <h3 className="text-xl lg:text-5xl tracking-[3px] font-light lg:tracking-[5px] text-white mb-4 lg:mb-6">Our Portfolio</h3>
+        <h3 className="text-2xl lg:text-5xl tracking-[3px] font-light lg:tracking-[5px] text-white mb-4 lg:mb-6">Our Portfolio</h3>
         <p className="text-sm text-gray-300 lg:text-lg tracking-[2px] mb-6 lg:mb-8">
           We collaborate with top-tier brands to deliver outstanding solutions. Our commitment to quality and innovation has built long-lasting partnerships.
         </p>
@@ -47,10 +47,10 @@ const PortfolioSection = () => {
         axis="y"
         values={brands}
         onReorder={setBrands}
-        className="lg:w-1/2 lg:flex lg:flex-wrap md:w-1/2 md:flex md:flex-wrap grid grid-cols-3 justify-center gap-3 md:gap-6 lg:gap-6"
+        className="lg:w-1/2 lg:flex lg:flex-wrap md:w-1/2 md:flex md:flex-wrap grid grid-cols-2 justify-center gap-3 md:gap-6 lg:gap-6"
       >
         {brands.map((brand) => (
-          <Reorder.Item key={brand.id} value={brand} className="cursor-pointer list-none">
+          <Reorder.Item key={brand.id} value={brand} drag={false} className="cursor-pointer list-none">
             <motion.div
               layout
               whileInView={{ opacity: 1, y: 0 }}
@@ -58,7 +58,7 @@ const PortfolioSection = () => {
               transition={{ duration: 0.5 }}
               className="bg-white shadow-md p-4 rounded-lg"
             >
-              <img src={brand.logo} alt={brand.name} className="w-20 h-10 md:w-24 md:h-12 lg:w-32 lg:h-20" />
+              <img src={brand.logo} alt={brand.name} loading="lazy" className="w-20 h-10 md:w-24 md:h-12 lg:w-32 lg:h-20" />
             </motion.div>
           </Reorder.Item>
         ))}
