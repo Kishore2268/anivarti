@@ -12,15 +12,15 @@ const testimonials = [
     name: "Rakesh",
     company: "Raiika",
     feedback:
-      "Anivarti transformed our e-commerce operations with their seamless inventory management and multi-channel order processing solutions. Their expertise helped us scale efficiently while reducing operational hassles. Highly recommended!.",
-    image: "images/testimonial-men2.jpg", 
+      "Anivarti <span class='text-white'>transformed our e-commerce operations</span> with their seamless inventory management and multi-channel order processing solutions. Their expertise helped us <span class='text-white'>scale efficiently while reducing operational hassles</span>. Highly recommended!",
+    image: "images/testimonial-men2.jpg",
   },
   {
     id: 2,
     name: "Ravinder",
     company: "Morvi Retail",
     feedback:
-      "As a handicraft business owner, I struggled with supply chain and market expansion. Anivarti provided us with tailored solutions that helped streamline our distribution and financial management. Thanks to them, our brand is reaching new heights!.",
+      "As a handicraft business owner, I struggled with supply chain and market expansion. Anivarti provided us with <span class='text-white'>tailored solutions that helped streamline our distribution and financial management</span>. Thanks to them, <span class='text-white'>our brand is reaching new heights</span>!",
     image: "images/testimonial-men1.jpg",
   },
   {
@@ -28,16 +28,16 @@ const testimonials = [
     name: "Akshat Jain",
     company: "Health Affairs",
     feedback:
-      "The team at Anivarti built an outstanding website for our brand. Their creative design and branding solutions truly set us apart in a competitive market. Professional, responsive, and innovative – they are the perfect partners for digital success!.",
-    image: "images/testimonial-men.jpg",  
+      "The team at Anivarti <span class='text-white'>built an outstanding website</span> for our brand. Their <span class='text-white'>creative design and branding solutions</span> truly set us apart in a competitive market. Professional, responsive, and innovative – they are the <span class='text-white'>perfect partners for digital success</span>!",
+    image: "images/testimonial-men.jpg",
   },
   {
     id: 4,
     name: "Pooja Gupta",
     company: "Poshkpur",
     feedback:
-      "Anivarti’s textile business community has been a game-changer for networking and industry growth. Their PR and outreach efforts helped us connect with potential clients and expand our reach in ways we never imagined.",
-    image: "images/testimonial1.png", 
+      "Anivarti’s <span class='text-white'>textile business community has been a game-changer for networking and industry growth</span>. Their PR and outreach efforts  <span class='text-white'>helped us connect with potential clients and expand our reach</span> in ways we never imagined.",
+    image: "images/testimonial1.png",
   },
 ];
 
@@ -46,7 +46,7 @@ const TestimonialSection = () => {
 
   return (
     <div className="w-full max-w-6xl mx-auto text-center px-2 py-8 lg:py-16">
-      <h2 className="text-xl lg:text-4xl tracking-[2px] lg:tracking-[5px] text-white mb-8">
+      <h2 className="text-2xl lg:text-4xl tracking-[1px] lg:tracking-[5px] text-white mb-8">
         What Our Clients Say About Us
       </h2>
 
@@ -61,8 +61,8 @@ const TestimonialSection = () => {
         navigation={false}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         breakpoints={{
-          380:{
-            slidesPerView:1
+          300: {
+            slidesPerView: 1,
           },
           640: {
             slidesPerView: 1.2,
@@ -96,14 +96,16 @@ const TestimonialSection = () => {
                   <h4 className="text-md md:text-lg lg:text-xl tracking-[1px] text-white mb-1">
                     {testimonial.name}
                   </h4>
-                  <p className="text-sm md:text-md lg:text-xl text-gray-300 mb-2 tracking-[1px]">{testimonial.company}</p>
+                  <p className="xs:text-xs sm:text-sm md:text-md lg:text-xl text-gray-300 mb-2 tracking-[1px]">
+                    {testimonial.company}
+                  </p>
                 </div>
 
                 {/* Divider Line */}
                 <div className="h-32 w-px bg-gray-300 mx-4"></div>
 
                 {/* Right Side: Feedback */}
-                <div className="w-3/4 md:w-[70%] text-left text-sm md:text-md lg:text-lg tracking-[1px] md:tracking-[2px] text-gray-300">
+                <div className="w-3/4 md:w-[70%] text-left text-sm md:text-md lg:text-lg tracking-[1px] md:tracking-[2px] text-gray-400">
                   <p
                     dangerouslySetInnerHTML={{ __html: testimonial.feedback }}
                   />

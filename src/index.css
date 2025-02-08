@@ -10,7 +10,7 @@
     justify-content: center;
     align-items: center;
     margin: 0;
-    padding: 20px;
+    padding: 10px;
 }
 
 .laptop {
@@ -213,7 +213,7 @@
     display: flex;
     gap: 2rem; /* Adjusts spacing */
     width: max-content;
-    animation: scroll-left 15s linear infinite; /* Adjust speed */
+    animation: scroll-left 20s linear infinite; /* Adjust speed */
   }
   
   .logo-item {

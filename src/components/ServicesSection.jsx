@@ -85,7 +85,7 @@ const ServicesSection = () => {
       {/* Heading and Paragraph */}
       <div className="text-center">
         <motion.h2
-          className="text-3xl lg:text-5xl font-light text-white tracking-[3px] lg:tracking-[5px] mb-4 lg:mb-8"
+          className="text-2xl lg:text-5xl font-light text-white tracking-[3px] lg:tracking-[5px] mb-4 lg:mb-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -93,7 +93,7 @@ const ServicesSection = () => {
           Our Services
         </motion.h2>
         <motion.p
-          className="text-sm lg:text-xl mb-4 lg:mb-8 tracking-[1px] text-gray-300"
+          className="text-md lg:text-xl mb-4 lg:mb-8 tracking-[1px] text-gray-300"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
@@ -161,7 +161,7 @@ const ServicesSection = () => {
         <Link
           to="/services"
           onClick={() => window.scrollTo(0, 0)} // Scroll to top when navigating to services
-          className="text-white bg-electricBlue py-3 px-8 rounded-full tracking-[1px] text-md lg:text-lg transition duration-300 flex items-center gap-2"
+          className="text-white bg-electricBlue py-3 px-8 rounded-full tracking-[1px] text-sm lg:text-lg hover:bg-[#286d7e] transition duration-300 flex items-center gap-2"
         >
           Know More About Our Services
           <FaArrowRight className="text-white text-lg transition-transform duration-300 group-hover:translate-x-1" />

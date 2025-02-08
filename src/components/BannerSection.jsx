@@ -26,7 +26,7 @@ const BannerSection = () => {
 
   return (
     <section className="h-screen bg-black flex justify-center items-center">
-      <div className="flex flex-col lg:flex-row justify-between items-center w-[95%] lg:w-[85%] px-4">
+      <div className="flex flex-col lg:flex-row justify-between items-center w-[100%] lg:w-[85%] px-2 lg:px-4">
         <div className="w-full text-left">
           {/* Heading Animation */}
           <motion.h1
@@ -36,14 +36,14 @@ const BannerSection = () => {
             animate="visible"
           >
             Hey,We're{" "}
-            <span className="text-2xl lg:text-7xl  font-semibold text-electricBlue text-center tracking-[2px] lg:tracking-[5px]">
+            <span className="text-2xl lg:text-7xl  font-semibold text-electricBlue text-center tracking-[3px] lg:tracking-[5px]">
               ANIVARTI👋
             </span>
           </motion.h1>
 
           {/* Paragraph Animation */}
           <motion.p
-            className="mt-10 lg:mt-12 text-md lg:text-2xl  text-gray-300 w-[95%] lg:w-[70%]  mx-auto text-center tracking-[1px] lg:tracking-[2px]"
+            className="mt-10 lg:mt-12 text-md lg:text-2xl text-gray-300 w-[95%] lg:w-[70%]  mx-auto text-center tracking-[1px] lg:tracking-[2px]"
             variants={paragraphVariants}
             initial="hidden"
             animate="visible"

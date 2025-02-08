@@ -12,7 +12,7 @@ const LaptopSection = () => {
 
   const scale = Math.min(0.1 + scrollY / 600, 1); // Smooth scaling
   const opacity = Math.max(1 - scrollY / 600, 0); // Fade effect
-  const translateY = Math.min(scrollY/600, 100); // Limit the upward translation
+  const translateY = Math.min(scrollY , 75); // Limit the upward translation
 
   return (
     <section

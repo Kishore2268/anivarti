@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import { FaMapMarkerAlt, FaEnvelope, FaPhoneVolume } from "react-icons/fa";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
@@ -19,50 +19,65 @@ const Contact = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+// Handle form submission
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsLoading(true);
+  setStatusMessage("");
 
-  // Handle form submission
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsLoading(true);
-    setStatusMessage("");
-
-    emailjs
-      .send(
-        "YOUR_SERVICE_ID", // Replace with your EmailJS Service ID
-        "YOUR_TEMPLATE_ID", // Replace with your EmailJS Template ID
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          phone: formData.phone,
-          company: formData.company,
-          message: formData.message,
-        },
-        "YOUR_PUBLIC_KEY"
-      )
-      .then(
-        () => {
-          setStatusMessage("Message sent successfully!");
-          setFormData({
-            name: "",
-            email: "",
-            phone: "",
-            company: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setStatusMessage("Failed to send message. Please try again.");
-          console.error("EmailJS Error:", error);
-        }
-      )
-      .finally(() => {
-        setIsLoading(false);
+  emailjs
+    .send(
+      "service_22ia1gj", // EmailJS Service ID
+      "template_nudgzae", // EmailJS Template ID
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        message: formData.message,
+      },
+      "0kTNxjqEMsDoFDT9P" // EmailJS User ID
+    )
+    .then(() => {
+      setStatusMessage("Message sent successfully!");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        message: "",
       });
-  };
+    })
+    .catch((error) => {
+      setStatusMessage("Failed to send message. Please try again.");
+      console.error("EmailJS Error:", error);
+    })
+    .finally(() => {
+      setIsLoading(false);
+    });
+};
+
+// Clear the message after 3 seconds
+useEffect(() => {
+  if (statusMessage) {
+    const timer = setTimeout(() => setStatusMessage(""), 3000);
+    return () => clearTimeout(timer); // Cleanup to avoid memory leaks
+  }
+}, [statusMessage]);
   return (
     <div>
       {/* Contact Form Section */}
-      <section className="w-[95%] lg:w-[90%] mx-auto bg-black py-24 text-center">
+      <section className="w-[98%] lg:w-[90%] mx-auto bg-black xs:py-6 md:py-24 text-center">
+
+      <motion.h1
+    className="text-2xl lg:text-5xl font-light text-white mb-8 tracking-[2px] md:tracking-[5px]"
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    viewport={{ once: true }}
+    transition={{ duration: 2 }}
+  >
+    Have a Thought?
+  </motion.h1>
   <motion.h1
     className="text-lg lg:text-3xl font-light text-white mb-8 tracking-[3px]"
     initial={{ opacity: 0 }}
@@ -76,7 +91,7 @@ const Contact = () => {
   </motion.h1>
 
   <motion.div
-    className="w-[95%] lg:w-[80%] mx-auto p-6 rounded-xl border border-gray-300 shadow-xl"
+    className="w-[98%] lg:w-[95%] xl:w-[80%] mx-auto p-6 rounded-xl border border-gray-300 shadow-xl"
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
@@ -86,7 +101,7 @@ const Contact = () => {
       Get In Touch!
     </h1>
     <form onSubmit={handleSubmit}>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
         {/* Left side inputs */}
         <div className="flex flex-col gap-4">
           <motion.input
@@ -156,7 +171,7 @@ const Contact = () => {
       {/* Submit Button - Centered */}
       <motion.button
         type="submit"
-        className="mt-6 bg-electricBlue text-md lg:text-lg text-white py-2 px-6 rounded-2xl tracking-[1px] transition hover:bg-sky-400"
+        className="mt-6 bg-electricBlue text-md lg:text-lg text-white py-2 px-6 rounded-2xl tracking-[1px] transition hover:bg-[#286d7e]"
         whileInView={{ opacity: 1 }}
         initial={{ opacity: 0 }}
         transition={{ delay: 1.2 }}
@@ -165,7 +180,17 @@ const Contact = () => {
         {isLoading ? "Sending..." : "Send Message"}
       </motion.button>
     </form>
-    {statusMessage && <p className="text-white mt-4">{statusMessage}</p>}
+    {/* Status Message */}
+    {statusMessage && (
+        <motion.p 
+          className="text-white mt-4"
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 0 }}
+          transition={{ delay: 2.5, duration: 0.5 }}
+        >
+          {statusMessage}
+        </motion.p>
+      )}
   </motion.div>
 </section>
 

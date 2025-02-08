@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       //custom screen breakpoints
       screens: {
+        'xs': '360px',
         'sm': '640px',
         'md': '768px',
         'lg': '1024px',
@@ -15,7 +16,9 @@ module.exports = {
       colors: {
         darkBlue: '#0A244A',
         skyBlue: '#5DADE2',
-        electricBlue: '#00CFFC',
+        electricBlue: '#009CC3',
+
+ 
         darkGray: '#1C1C1E',
         lightGray: '#F2F2F2',
       },

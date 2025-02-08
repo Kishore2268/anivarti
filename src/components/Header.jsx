@@ -64,7 +64,7 @@ const Header = () => {
         <div className="text-2xl font-bold">
           <a href="/">
             <img
-              src="/images/anivarti-logo-1.jpg"
+              src="/images/anivarti-logo.webp"
               alt="Anivarti Logo"
               className="h-10 md:h-16 px-2 bg-transparent w-auto rounded-md"
             />
@@ -139,7 +139,7 @@ const Header = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button className="bg-[#00DEFC] text-md xl:text-lg tracking-[1px] text-white py-2 lg:px-6 hidden lg:block rounded-full font-medium hover:bg-[#009CC3]">
+          <button className="bg-electricBlue text-md xl:text-lg tracking-[1px] text-white py-2 lg:px-6 hidden lg:block rounded-full font-medium hover:bg-[#286d7e]">
             Book a Free Consultation
           </button>
         </a>

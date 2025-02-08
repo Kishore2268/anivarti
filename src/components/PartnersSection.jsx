@@ -14,7 +14,7 @@ const PartnersSection = () => {
 
   return (
     <section className="bg-black w-[95%] mx-auto py-6 lg:py-20">
-      <h1 className="p-4 text-lg lg:text-4xl text-white font-light mb-12 tracking-[3px] lg:tracking-[5px] text-center">
+      <h1 className="p-2 text-xl lg:text-4xl text-white font-light mb-12 tracking-[3px] lg:tracking-[5px] text-center">
         PARTNER & SUPPORTED BY
       </h1>
 

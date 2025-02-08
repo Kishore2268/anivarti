@@ -6,7 +6,7 @@ import LaptopSection from "../components/LaptopSection";
 import Contact from "../components/Contact";
 import TestimonialSection from "../components/Testimonials";
 import PortfolioSection from "../components/PortfolioSection";
-import { FaArrowUp } from "react-icons/fa"; // Up arrow icon
+import { FaArrowUp } from "react-icons/fa";
 
 const HomePage = () => {
   const [showButton, setShowButton] = useState(false);
@@ -52,7 +52,7 @@ const HomePage = () => {
       {showButton && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-16 right-4 lg:bottom-8 lg:right-8 p-3 bg-electricBlue text-xl text-gray-950 z-50 rounded-full shadow-lg hover:bg-sky-400 focus:outline-none"
+          className="fixed bottom-16 right-4 lg:bottom-8 lg:right-8 p-3 bg-electricBlue text-xl text-gray-950 z-50 rounded-full shadow-lg hover:bg-[#286d7e] focus:outline-none"
         >
           <FaArrowUp />
         </button>

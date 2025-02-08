@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaArrowRight } from "react-icons/fa"
 
 const services = [
   {
@@ -68,9 +69,8 @@ const Services = () => {
   return (
     <section className="py-24">
       {/* Main Heading */}
-      <h2 className="text-center text-2xl lg:text-5xl tracking-[3px] lg:tracking-[5px]font-bold text-white mb-12">
-        Our <span className="text-electricBlue">10Kadum</span> Solution for D2C
-        Brands
+      <h2 className="text-center text-2xl lg:text-5xl tracking-[3px] lg:tracking-[5px] font-bold text-white mb-12">
+        Our <span className="text-electricBlue">10Kadum</span> Solution for D2C Brands
       </h2>
 
       {/* Services List */}
@@ -95,12 +95,20 @@ const Services = () => {
             />
             {/* Content */}
             <div className="md:w-1/2 text-center md:text-left px-0 lg:px-6">
-              <h3 className="text-lg md:text-xl lg:text-3xl tracking-[3px] md:tracking-[5px] text-white  mb-3 lg:mb-6">
+              <h3 className="text-lg md:text-xl lg:text-3xl tracking-[3px] md:tracking-[5px] text-white mb-3 lg:mb-6">
                 {service.title}
               </h3>
-              <p className="text-sm md:text-md lg:text-lg tracking-[2px] md:tracking-[3px] text-gray-300 mt-2">
+              <p className="text-sm md:text-md lg:text-lg tracking-[2px] md:tracking-[3px] text-gray-300 mt-2 mb-4">
                 {service.description}
               </p>
+
+              {/* Know More Button */}
+              <a
+                href={`/services/${service.title.toLowerCase().replace(/\s+/g, "-")}`}
+                className="inline-flex items-center gap-2 underline text-electricBlue py-2 rounded-xl font-semibold text-sm md:text-md lg:text-lg tracking-[1px] lg:tracking-[3px] hover:text-[#286d7e] transition duration-300"
+              >
+                Know More <FaArrowRight size={20} />
+              </a>
             </div>
           </motion.div>
         ))}
@@ -118,8 +126,7 @@ const Services = () => {
               Let's collaborate with us and scale up your business
             </h3>
             <p className="text-gray-300 text-sm tracking-[1px] lg:tracking-[2px] lg:text-lg mb-0 lg:mb-6">
-              Take your brand to the next level with our expert solutions. We
-              provide top-notch services to help your business thrive.
+              Take your brand to the next level with our expert solutions. We provide top-notch services to help your business thrive.
             </p>
           </div>
 
@@ -135,7 +142,7 @@ const Services = () => {
               href="https://forms.google.com/your-form-link"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-electricBlue text-white px-6 py-3 rounded-xl font-semibold text-md lg:text-lg tracking-[1px] lg:tracking-[3px] hover:bg-sky-600 transition duration-300"
+              className="bg-electricBlue text-white px-6 py-3 rounded-xl font-semibold text-md lg:text-lg tracking-[1px] lg:tracking-[3px] hover:bg-[#286d7e] transition duration-300"
             >
               Book a Free Consultation
             </a>
