@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaArrowRight } from "react-icons/fa";
 
 const services = [
   {
@@ -8,70 +7,60 @@ const services = [
     description:
       "Comprehensive Services for Marketplace Onboarding and Seller Portal Management to Maximize Return on Investment.",
     image: "images/marketplace.webp",
-    path: "marketplaces",
   },
   {
     title: "Marketplace Creation",
     description:
       "Building and Managing Your Own Online Store to Maximize Sales Performance.",
     image: "images/marketplacecreation.avif",
-    path: "marketplace-creation",
   },
   {
     title: "Social Presence",
     description:
       "Managing Your Brand's Social Presence to Strengthen Its Impact and Enhance Brand Value.",
     image: "images/sp.webp",
-    path: "social-presence",
   },
   {
     title: "Branding",
     description:
       "Developing and Implementing Strategies to Build Brand Value and Reach the Right Customers.",
     image: "images/br.webp",
-    path: "branding",
   },
   {
     title: "Marketing",
     description:
       "Comprehensive Campaign Management to Maximize Return on Ad Spend (ROAS).",
     image: "images/marketing.webp",
-    path: "marketing",
   },
   {
     title: "Payment",
     description:
       "Integrating Best-in-Class Payment Gateways to Ensure Seamless Transactions and Prevent Lost Sales.",
     image: "images/payment.webp",
-    path: "payment",
   },
   {
     title: "Logistics",
     description:
       "Leverage Our Established Network of Logistics Partners for Seamless, Plug-and-Play Last-Mile Delivery Across the Country.",
     image: "images/logistics.webp",
-    path: "logistics",
   },
   {
     title: "Finance & Accounting",
     description:
       "Access Comprehensive Return Filing and Accounting Solutions in One Place, with Interactive Reports for Better Insights.",
     image: "images/fc.webp",
-    path: "finance-accounting",
   },
   {
     title: "Market Research",
     description:
       "Conducting Market Research to Identify Top Business Opportunities for Your Growth.",
     image: "images/mr.webp",
-    path: "market-research",
   },
   {
     title: "Omni Channel Distribution",
     description:
       "Developing an Omnichannel Strategy to Enhance Your Distribution Across Online and Offline Sales Channels.",
     image: "images/omni.webp",
-    path: "omni-channel-distribution",
   },
 ];
 
@@ -112,14 +101,6 @@ const Services = () => {
               <p className="text-sm md:text-md lg:text-lg tracking-[2px] md:tracking-[3px] text-gray-300 mt-2 mb-4">
                 {service.description}
               </p>
-
-              {/* Know More Button */}
-              <a
-                href={`/services/${service.path}`}
-                className="inline-flex items-center gap-2 underline text-electricBlue py-2 rounded-xl font-semibold text-sm md:text-md lg:text-lg tracking-[1px] lg:tracking-[3px] hover:text-[#286d7e] transition duration-300"
-              >
-                Know More <FaArrowRight size={20} />
-              </a>
             </div>
           </motion.div>
         ))}
