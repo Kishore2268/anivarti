@@ -1,16 +1,21 @@
+import { useMemo } from "react";
+
 const PartnersSection = () => {
-  const logos = [
-    { src: "images/ABC.webp" },
-    { src: "images/zentelia.webp" },
-    { src: "images/ISTART.png" },
-    { src: "images/NITI-AIM-Logo.webp" },
-    { src: "images/startup-india.webp" },
-    { src: "images/amazon-logo.webp" },
-    { src: "images/shiprocket-logo.svg" },
-    { src: "images/razorpay.webp" },
-    { src: "images/Flipkart-Logo.webp" },
-    { src: "images/shopify-logo.webp" },
-  ];
+  const logos = useMemo(
+    () => [
+      { src: "images/ABC.webp" },
+      { src: "images/zentelia.webp" },
+      { src: "images/ISTART.png" },
+      { src: "images/NITI-AIM-Logo.webp" },
+      { src: "images/startup-india.webp" },
+      { src: "images/amazon-logo.webp" },
+      { src: "images/shiprocket-logo.svg" },
+      { src: "images/razorpay.webp" },
+      { src: "images/Flipkart-Logo.webp" },
+      { src: "images/shopify-logo.webp" },
+    ],
+    []
+  );
 
   return (
     <section className="bg-black w-[95%] mx-auto py-6 lg:py-20">
@@ -31,7 +36,6 @@ const PartnersSection = () => {
               />
             </div>
           ))}
-
           {logos.map((logo, index) => (
             <div key={`dup-${index}`} className="logo-item">
               <img

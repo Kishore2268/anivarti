@@ -213,7 +213,7 @@
     display: flex;
     gap: 2rem; /* Adjusts spacing */
     width: max-content;
-    animation: scroll-left 20s linear infinite; /* Adjust speed */
+    animation: scroll-left 25s linear infinite; /* Adjust speed */
   }
   
   .logo-item {
