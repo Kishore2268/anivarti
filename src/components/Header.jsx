@@ -1,269 +1,152 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import clsx from "clsx";
+
+const sections = ["services", "partners", "portfolio", "testimonials", "contact"];
+const headerHeight = 100;
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
-  const headerHeight = 100;
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+
+  const handleHomeClick = () => {
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
+    }
+    setActiveSection(""); // Set Home as active when clicked
   };
 
-  // Function to handle scroll position and set active section
-  const handleScroll = () => {
-    const sections = [
-      "services",
-      "partners",
-      "portfolio",
-      "testimonials",
-      "contact",
-    ];
+  const handleScroll = useCallback(() => {
     let currentSection = "";
+    let hasScrolledPastFirstSection = false;
 
-    sections.forEach((sectionId) => {
-      const section = document.getElementById(sectionId);
-      if (
-        section &&
-        section.getBoundingClientRect().top - headerHeight <= 100 &&
-        section.getBoundingClientRect().bottom - headerHeight > 100
-      ) {
-        currentSection = sectionId;
+    sections.forEach((id) => {
+      const section = document.getElementById(id);
+      if (section) {
+        const { top, bottom } = section.getBoundingClientRect();
+        if (top - headerHeight <= 100 && bottom - headerHeight > 100) {
+          currentSection = id;
+          hasScrolledPastFirstSection = true;
+        }
       }
     });
 
-    setActiveSection(currentSection);
-  };
-
-  // Adding scroll event listener
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    setActiveSection(hasScrolledPastFirstSection ? currentSection : "");
   }, []);
 
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      window.scrollTo({
-        top: section.offsetTop - headerHeight,
-        behavior: "smooth",
-      });
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
 
-      // Trigger handleScroll after a slight delay to allow the scroll to complete
-      setTimeout(() => {
-        handleScroll();
-      }, 900); // Adjust the delay as needed (in ms)
+  const scrollToSection = (id) => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" }), 700);
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
     }
+    setTimeout(handleScroll, 1500);
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-black bg-opacity-40 backdrop-blur-md shadow-lg border-b border-gray-400 z-50">
+    <header className="fixed top-0 left-0 w-full bg-black bg-opacity-40 backdrop-blur-md shadow-lg border-b border-gray-700 z-50">
       <div className="flex justify-between items-center w-[95%] md:w-[90%] lg:w-[95%] mx-auto py-2 px-4">
         {/* Logo */}
-        <div className="text-2xl font-bold">
-          <a href="/">
-            <img
-              src="/images/anivarti-logo.webp"
-              alt="Anivarti Logo"
-              className="h-10 md:h-16 px-2 bg-transparent w-auto rounded-md"
-            />
-          </a>
-        </div>
+        <a href="/" className="text-2xl font-bold">
+          <img src="/images/anivarti-logo.webp" alt="Anivarti Logo" className="h-12 md:h-16 px-2 bg-transparent w-auto rounded-md" />
+        </a>
 
         {/* Navigation Links */}
         <nav className="hidden lg:flex space-x-8">
           <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className={`relative text-white text-md xl:text-lg font-medium hover:text-[#00DEFC] pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
-              activeSection === "" ? "text-[#00DEFC] after:scale-x-100" : ""
-            }`}
+            onClick={handleHomeClick}
+            className={clsx(
+              "relative text-white text-md xl:text-lg font-medium hover:text-[#00DEFC] pb-1.5 after:block after:h-[3px] after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform hover:after:scale-x-100",
+              { "text-[#00DEFC] after:scale-x-100": activeSection === "" && location.pathname === "/" }
+            )}
           >
             Home
           </button>
-          <button
-            onClick={() => scrollToSection("services")}
-            className={`relative text-white text-md xl:text-lg font-medium hover:text-[#00DEFC] pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
-              activeSection === "services"
-                ? "text-[#00DEFC] after:scale-x-100"
-                : ""
-            }`}
-          >
-            Services
-          </button>
-          <button
-            onClick={() => scrollToSection("partners")}
-            className={`relative text-white text-md xl:text-lg font-medium hover:text-[#00DEFC] pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
-              activeSection === "partners"
-                ? "text-[#00DEFC] after:scale-x-100"
-                : ""
-            }`}
-          >
-            Our Partners
-          </button>
-          <button
-            onClick={() => scrollToSection("portfolio")}
-            className={`relative text-white text-md xl:text-lg font-medium hover:text-[#00DEFC] pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
-              activeSection === "portfolio"
-                ? "text-[#00DEFC] after:scale-x-100"
-                : ""
-            }`}
-          >
-            Portfolio
-          </button>
-          <button
-            onClick={() => scrollToSection("testimonials")}
-            className={`relative text-white text-md xl:text-lg font-medium hover:text-[#00DEFC] pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
-              activeSection === "testimonials"
-                ? "text-[#00DEFC] after:scale-x-100"
-                : ""
-            }`}
-          >
-            Testimonials
-          </button>
-          <button
-            onClick={() => scrollToSection("contact")}
-            className={`relative text-white text-md xl:text-lgfont-medium hover:text-[#00DEFC] pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
-              activeSection === "contact"
-                ? "text-[#00DEFC] after:scale-x-100"
-                : ""
-            }`}
-          >
-            Contact Us
-          </button>
+
+          {sections.map((id) => (
+            <button
+              key={id}
+              onClick={() => scrollToSection(id)}
+              className={clsx(
+                "relative text-white text-md xl:text-lg font-medium hover:text-[#00DEFC] pb-1.5 after:block after:h-[3px] after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform hover:after:scale-x-100",
+                { "text-[#00DEFC] after:scale-x-100": activeSection === id }
+              )}
+            >
+              {id.charAt(0).toUpperCase() + id.slice(1)}
+            </button>
+          ))}
         </nav>
 
         {/* Book a Free Consultation Button */}
-        <a
-          href="https://your-google-form-link.com" // Replace with your Google Form link
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://forms.google.com" target="_blank" rel="noopener noreferrer">
           <button className="bg-electricBlue text-md xl:text-lg tracking-[1px] text-white py-2 lg:px-6 hidden lg:block rounded-full font-medium hover:bg-[#286d7e]">
             Book a Free Consultation
           </button>
         </a>
 
-        {/* Mobile Menu */}
-        <div className="lg:hidden">
-          <button
-            onClick={toggleMenu}
-            className="text-white"
-            aria-label="Toggle Menu"
-          >
-            {isMenuOpen ? (
-              <svg
-                className="w-7 h-7"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            ) : (
-              <svg
-                className="w-7 h-7"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            )}
-          </button>
-        </div>
+        {/* Mobile Menu Toggle */}
+        <button onClick={toggleMenu} className="lg:hidden text-white">
+          {isMenuOpen ? (
+            <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          )}
+        </button>
       </div>
 
-      {/* Mobile Menu with Glass Background */}
-      <div
-        className={`${
-          isMenuOpen ? "block" : "hidden"
-        } bg-black bg-opacity-40 backdrop-blur-md shadow-lg z-50 transition-all duration-500 ease-in-out`}
-      >
-        <nav className="flex flex-col items-center space-y-6 py-6 px-4">
-          <a
-            href="/"
-            className={`relative text-white font-medium hover:text-[#00DEFC] pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
-              activeSection === "" ? "text-[#00DEFC] after:scale-x-100" : ""
-            }`}
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="lg:hidden bg-black bg-opacity-40 backdrop-blur-md shadow-lg z-50 transition-all duration-500 ease-in-out">
+          <nav className="flex flex-col items-center space-y-6 border-t-1 border-gray-700 py-6 px-4">
+          <button
+            onClick={handleHomeClick}
+            className={clsx(
+              "relative text-white text-md xl:text-lg font-medium hover:text-[#00DEFC] pb-1.5 after:block after:h-[3px] after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform hover:after:scale-x-100",
+              { "text-[#00DEFC] after:scale-x-100": activeSection === "" && location.pathname === "/" }
+            )}
           >
             Home
-          </a>
-          <button
-            onClick={() => scrollToSection("services")}
-            className={`relative text-white font-medium hover:text-[#00DEFC] text-xl pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
-              activeSection === "services"
-                ? "text-[#00DEFC] after:scale-x-100"
-                : ""
-            }`}
-          >
-            Services
-          </button>
-          <button
-            onClick={() => scrollToSection("partners")}
-            className={`relative text-white font-medium hover:text-[#00DEFC] text-xl pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
-              activeSection === "partners"
-                ? "text-[#00DEFC] after:scale-x-100"
-                : ""
-            }`}
-          >
-            Our Partners
-          </button>
-          <button
-            onClick={() => scrollToSection("portfolio")}
-            className={`relative text-white font-medium hover:text-[#00DEFC] text-xl pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
-              activeSection === "portfolio"
-                ? "text-[#00DEFC] after:scale-x-100"
-                : ""
-            }`}
-          >
-            Portfolio
-          </button>
-          <button
-            onClick={() => scrollToSection("testimonials")}
-            className={`relative text-white font-medium hover:text-[#00DEFC] text-xl pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
-              activeSection === "testimonials"
-                ? "text-[#00DEFC] after:scale-x-100"
-                : ""
-            }`}
-          >
-            Testimonials
-          </button>
-          <button
-            onClick={() => scrollToSection("contact")}
-            className={`relative text-white font-medium hover:text-[#00DEFC] text-xl pb-1.5 after:content-[''] after:block after:h-[3px] after:mt-1 after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
-              activeSection === "contact"
-                ? "text-[#00DEFC] after:scale-x-100"
-                : ""
-            }`}
-          >
-            Contact Us
           </button>
 
-          {/* Mobile Call to Action Button */}
-          <a
-            href="https://your-google-form-link.com" // Replace with your Google Form link
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className="bg-[#00DEFC] text-white py-2 px-4 lg:px-6 rounded-full font-medium hover:bg-[#009CC3]">
-              Book a Free Consultation
+            {sections.map((id) => (
+              <button
+              key={id}
+              onClick={() => scrollToSection(id)}
+              className={clsx(
+                "relative text-white text-md xl:text-lg font-medium hover:text-[#00DEFC] pb-1.5 after:block after:h-[3px] after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform hover:after:scale-x-100",
+                { "text-[#00DEFC] after:scale-x-100": activeSection === id }
+              )}
+            >
+              {id.charAt(0).toUpperCase() + id.slice(1)}
             </button>
-          </a>
-        </nav>
-      </div>
+            
+            ))}
+
+            {/* Mobile CTA Button */}
+            <a href="https://forms.google.com" target="_blank" rel="noopener noreferrer">
+              <button className="bg-[#00DEFC] text-white py-2 px-4 rounded-full font-medium hover:bg-[#009CC3]">
+                Book a Free Consultation
+              </button>
+            </a>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };

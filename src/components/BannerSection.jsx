@@ -43,7 +43,7 @@ const BannerSection = () => {
 
           {/* Paragraph Animation */}
           <motion.p
-            className="mt-10 lg:mt-12 text-md lg:text-2xl text-gray-300 w-[95%] lg:w-[70%]  mx-auto text-center tracking-[1px] lg:tracking-[2px]"
+            className="mt-10 lg:mt-12 text-lg lg:text-2xl text-gray-300 w-[95%] lg:w-[70%]  mx-auto text-center tracking-[1px] lg:tracking-[2px]"
             variants={paragraphVariants}
             initial="hidden"
             animate="visible"

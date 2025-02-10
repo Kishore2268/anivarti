@@ -36,13 +36,16 @@ const ServicesPage = () => {
 
   return (
     <div className="relative mt-20">
-      {/* Back to Homepage link */}
+      {/* Back to Homepage & service page link */}
       <Link
-        to="/"
+        to={location.pathname.startsWith("/services/") ? "/services" : "/"}
         onClick={() => window.scrollTo(0, 0)}
-        className="absolute top-8 left-4 lg:top-6 lg:left-8 flex items-center text-blue-500 hover:text-blue-700 font-medium"
+        className="absolute top-8 left-4 lg:top-6 lg:left-8 underline flex items-center text-blue-500 hover:text-blue-700 font-medium"
       >
-        <FaArrowLeft className="mr-2" /> Back to Homepage
+        <FaArrowLeft className="mr-2" />{" "}
+        {location.pathname.startsWith("/services/")
+          ? "Back to Services page"
+          : "Back to Homepage"}
       </Link>
 
       {/* Render Services component only on /services route */}
@@ -59,16 +62,22 @@ const ServicesPage = () => {
         <Route path="logistics" element={<Logistics />} />
         <Route path="finance-accounting" element={<FinanceAccounting />} />
         <Route path="market-research" element={<MarketResearch />} />
-        <Route path="omni-channel-distribution" element={<OmniChannelDistribution />} />
+        <Route
+          path="omni-channel-distribution"
+          element={<OmniChannelDistribution />}
+        />
       </Routes>
 
-      {/* Back to Homepage link */}
+      {/* Back to Homepage & service page link */}
       <Link
-        to="/"
+        to={location.pathname.startsWith("/services/") ? "/services" : "/"}
         onClick={() => window.scrollTo(0, 0)}
-        className="absolute bottom-6 right-4 lg:bottom-6 lg:right-8 flex items-center text-blue-500 hover:text-blue-700 font-medium"
+        className="absolute bottom-4 right-4 lg:bottom-6 lg:right-8 underline flex items-center text-blue-500 hover:text-blue-700 font-medium"
       >
-        <FaArrowLeft className="mr-2" /> Back to Homepage
+        <FaArrowLeft className="mr-2" />{" "}
+        {location.pathname.startsWith("/services/")
+          ? "Back to Services page"
+          : "Back to Homepage"}
       </Link>
 
       {/* Scroll-to-Top Button */}
@@ -80,7 +89,7 @@ const ServicesPage = () => {
           <FaArrowUp />
         </button>
       )}
-      
+
       {/* Render Nested Route Component */}
       <Outlet />
     </div>

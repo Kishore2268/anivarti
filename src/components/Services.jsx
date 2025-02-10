@@ -1,5 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
 
 const services = [
   {
@@ -7,60 +9,70 @@ const services = [
     description:
       "Comprehensive Services for Marketplace Onboarding and Seller Portal Management to Maximize Return on Investment.",
     image: "images/marketplace.webp",
+    link: "/services/marketplaces",
   },
   {
     title: "Marketplace Creation",
     description:
       "Building and Managing Your Own Online Store to Maximize Sales Performance.",
     image: "images/marketplacecreation.avif",
+    link: "/services/marketplace-creation",
   },
   {
     title: "Social Presence",
     description:
       "Managing Your Brand's Social Presence to Strengthen Its Impact and Enhance Brand Value.",
     image: "images/sp.webp",
+    link: "/services/social-presence",
   },
   {
     title: "Branding",
     description:
       "Developing and Implementing Strategies to Build Brand Value and Reach the Right Customers.",
     image: "images/br.webp",
+    link: "/services/branding",
   },
   {
     title: "Marketing",
     description:
       "Comprehensive Campaign Management to Maximize Return on Ad Spend (ROAS).",
     image: "images/marketing.webp",
+    link: "/services/marketing",
   },
   {
     title: "Payment",
     description:
       "Integrating Best-in-Class Payment Gateways to Ensure Seamless Transactions and Prevent Lost Sales.",
     image: "images/payment.webp",
+    link: "/services/payment",
   },
   {
     title: "Logistics",
     description:
       "Leverage Our Established Network of Logistics Partners for Seamless, Plug-and-Play Last-Mile Delivery Across the Country.",
     image: "images/logistics.webp",
+    link: "/services/logistics",
   },
   {
     title: "Finance & Accounting",
     description:
       "Access Comprehensive Return Filing and Accounting Solutions in One Place, with Interactive Reports for Better Insights.",
     image: "images/fc.webp",
+    link: "/services/finance-accounting",
   },
   {
     title: "Market Research",
     description:
       "Conducting Market Research to Identify Top Business Opportunities for Your Growth.",
     image: "images/mr.webp",
+    link: "/services/market-research",
   },
   {
     title: "Omni Channel Distribution",
     description:
       "Developing an Omnichannel Strategy to Enhance Your Distribution Across Online and Offline Sales Channels.",
     image: "images/omni.webp",
+    link: "/services/omni-channel-distribution",
   },
 ];
 
@@ -101,6 +113,13 @@ const Services = () => {
               <p className="text-sm md:text-md lg:text-lg tracking-[2px] md:tracking-[3px] text-gray-300 mt-2 mb-4">
                 {service.description}
               </p>
+              {/* Know More Button */}
+              <Link
+                to={service.link}
+                className="mt-4 inline-flex items-center bg-electricBlue text-white px-6 py-2 rounded-xl font-semibold text-md lg:text-lg tracking-[1px] lg:tracking-[3px] hover:bg-[#286d7e] transition duration-300"
+              >
+                Know More <FaArrowRight className="ml-2" />
+              </Link>
             </div>
           </motion.div>
         ))}
