@@ -1,84 +1,41 @@
 import React, { useCallback, useState, useEffect } from "react";
-import { Link, Routes, Route, Outlet, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaArrowLeft, FaArrowUp } from "react-icons/fa";
 import Services from "../components/Services";
-
-// Import all service pages
-import Marketplaces from "../components/Marketplaces";
-import MarketplaceCreation from "../components/MarketplaceCreations";
-import SocialPresence from "../components/SocialPresence";
-import Branding from "../components/Branding";
-import Marketing from "../components/Marketing";
-import Payment from "../components/Payment";
-import Logistics from "../components/Logistics";
-import FinanceAccounting from "../components/FinanceAccounting";
-import MarketResearch from "../components/MarketResearch";
-import OmniChannelDistribution from "../components/OmniChannelDistribution";
-
 const ServicesPage = () => {
+  // State to control the visibility of the scroll-to-top button
   const [showButton, setShowButton] = useState(false);
-  const location = useLocation(); // Get current route
 
+  // Function to check the scroll position and toggle the button visibility
   const checkScrollTop = useCallback(() => {
     if (!showButton && window.scrollY > 500) {
-      setShowButton(true);
+      setShowButton(true); // Show button if scrolled past 500px
     } else if (showButton && window.scrollY <= 500) {
-      setShowButton(false);
+      setShowButton(false); // Hide button if scrolled above 500px
     }
-  }, [showButton]);
+  }, [showButton]); // Dependency ensures re-execution when `showButton` changes
 
+  // useEffect to add and remove the scroll event listener
   useEffect(() => {
-    window.addEventListener("scroll", checkScrollTop);
-    return () => window.removeEventListener("scroll", checkScrollTop);
-  }, [checkScrollTop]);
+    window.addEventListener("scroll", checkScrollTop); // Add listener on mount
+    return () => window.removeEventListener("scroll", checkScrollTop); // Cleanup on unmount
+  }, [checkScrollTop]); // Runs when `checkScrollTop` changes
 
+  // Function to smoothly scroll back to the top of the page
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
-
   return (
     <div className="relative mt-20">
-      {/* Back to Homepage & service page link */}
+      {/* Back to Homepage link (Top Left) */}
       <Link
-        to={location.pathname.startsWith("/services/") ? "/services" : "/"}
+        to="/"
         onClick={() => window.scrollTo(0, 0)}
         className="absolute top-8 left-4 lg:top-6 lg:left-8 underline flex items-center text-blue-500 hover:text-blue-700 font-medium"
       >
-        <FaArrowLeft className="mr-2" />{" "}
-        {location.pathname.startsWith("/services/")
-          ? "Back to Services page"
-          : "Back to Homepage"}
+        <FaArrowLeft className="mr-2" /> Back to Homepage
       </Link>
 
-      {/* Render Services component only on /services route */}
-      {location.pathname === "/services" && <Services />}
-
-      {/* Nested Routes for Service Details */}
-      <Routes>
-        <Route path="marketplaces" element={<Marketplaces />} />
-        <Route path="marketplace-creation" element={<MarketplaceCreation />} />
-        <Route path="social-presence" element={<SocialPresence />} />
-        <Route path="branding" element={<Branding />} />
-        <Route path="marketing" element={<Marketing />} />
-        <Route path="payment" element={<Payment />} />
-        <Route path="logistics" element={<Logistics />} />
-        <Route path="finance-accounting" element={<FinanceAccounting />} />
-        <Route path="market-research" element={<MarketResearch />} />
-        <Route
-          path="omni-channel-distribution"
-          element={<OmniChannelDistribution />}
-        />
-      </Routes>
-
-      {/* Back to Homepage & service page link */}
-      <Link
-        to={location.pathname.startsWith("/services/") ? "/services" : "/"}
-        onClick={() => window.scrollTo(0, 0)}
-        className="absolute bottom-4 right-4 lg:bottom-6 lg:right-8 underline flex items-center text-blue-500 hover:text-blue-700 font-medium"
-      >
-        <FaArrowLeft className="mr-2" />{" "}
-        {location.pathname.startsWith("/services/")
-          ? "Back to Services page"
-          : "Back to Homepage"}
-      </Link>
+      {/* Render Services component */}
+      <Services />
 
       {/* Scroll-to-Top Button */}
       {showButton && (
@@ -90,8 +47,14 @@ const ServicesPage = () => {
         </button>
       )}
 
-      {/* Render Nested Route Component */}
-      <Outlet />
+      {/* Back to Homepage link (Bottom Right) */}
+      <Link
+        to="/"
+        onClick={() => window.scrollTo(0, 0)}
+        className="absolute right-4 lg:bottom-6 lg:right-8 underline text-blue-500 hover:text-blue-700 font-medium"
+      >
+        Back to Homepage
+      </Link>
     </div>
   );
 };

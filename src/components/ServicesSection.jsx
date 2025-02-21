@@ -14,7 +14,7 @@ import {
   FaSearch,
   FaBoxes,
   FaArrowRight,
-} from "react-icons/fa";
+} from "react-icons/fa"; //icons for services cards
 
 const servicesData = [
   {
@@ -81,7 +81,7 @@ const servicesData = [
 
 const ServicesSection = () => {
   return (
-    <div className="px-2 bg-black lg:px-12 py-6">
+    <div className="px-2 bg-black lg:px-12 py-24">
       {/* Heading and Paragraph */}
       <div className="text-center">
         <motion.h2

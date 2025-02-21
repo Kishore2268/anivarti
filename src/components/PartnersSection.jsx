@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 
 const PartnersSection = () => {
-  const logos = useMemo(
+  const logos = useMemo(    // partners logo images
     () => [
       { src: "images/ABC.webp" },
       { src: "images/zentelia.webp" },
@@ -18,7 +18,7 @@ const PartnersSection = () => {
   );
 
   return (
-    <section className="bg-black w-[95%] mx-auto py-6 lg:py-20">
+    <section className="bg-black w-[95%] mx-auto py-6 itmes-center justify-center lg:py-24">
       <h1 className="p-2 text-xl lg:text-4xl text-white font-light mb-12 tracking-[3px] lg:tracking-[5px] text-center">
         PARTNER & SUPPORTED BY
       </h1>

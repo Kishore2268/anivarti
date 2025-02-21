@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  // State to store form data
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -12,58 +13,63 @@ const Contact = () => {
     message: "",
   });
 
+  // State for loading status
   const [isLoading, setIsLoading] = useState(false);
+  // State for status message after submission
   const [statusMessage, setStatusMessage] = useState("");
 
-  // Handle input changes
+  // Handle input changes and update form data state
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-// Handle form submission
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  setIsLoading(true);
-  setStatusMessage("");
 
-  emailjs
-    .send(
-      "service_22ia1gj", // EmailJS Service ID
-      "template_nudgzae", // EmailJS Template ID
-      {
-        from_name: formData.name,
-        from_email: formData.email,
-        phone: formData.phone,
-        company: formData.company,
-        message: formData.message,
-      },
-      "0kTNxjqEMsDoFDT9P" // EmailJS User ID
-    )
-    .then(() => {
-      setStatusMessage("Message sent successfully!");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        message: "",
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent page reload
+    setIsLoading(true); // Set loading state to true
+    setStatusMessage(""); // Clear previous status message
+
+    emailjs
+      .send(
+        "service_22ia1gj", // EmailJS Service ID
+        "template_nudgzae", // EmailJS Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          message: formData.message,
+        },
+        "0kTNxjqEMsDoFDT9P" // EmailJS User ID
+      )
+      .then(() => {
+        setStatusMessage("Message sent successfully!"); // Show success message
+        // Reset form fields after successful submission
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          message: "",
+        });
+      })
+      .catch((error) => {
+        setStatusMessage("Failed to send message. Please try again."); // Show error message
+        console.error("EmailJS Error:", error);
+      })
+      .finally(() => {
+        setIsLoading(false); // Reset loading state
       });
-    })
-    .catch((error) => {
-      setStatusMessage("Failed to send message. Please try again.");
-      console.error("EmailJS Error:", error);
-    })
-    .finally(() => {
-      setIsLoading(false);
-    });
-};
+  };
 
-// Clear the message after 3 seconds
-useEffect(() => {
-  if (statusMessage) {
-    const timer = setTimeout(() => setStatusMessage(""), 3000);
-    return () => clearTimeout(timer); // Cleanup to avoid memory leaks
-  }
-}, [statusMessage]);
+  // Clear the status message after 3 seconds
+  useEffect(() => {
+    if (statusMessage) {
+      const timer = setTimeout(() => setStatusMessage(""), 3000);
+      return () => clearTimeout(timer); // Cleanup timer on unmount
+    }
+  }, [statusMessage]);
+  
   return (
     <div>
       {/* Contact Form Section */}
