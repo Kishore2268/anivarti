@@ -24,7 +24,7 @@ const servicesData = [
     iconColor: "text-blue-500",
   },
   {
-    name: "Marketplace Creation",
+    name: "Custom SAAS Development",
     icon: <FaCogs />,
     link: "/marketplace-creation",
     iconColor: "text-green-500",
