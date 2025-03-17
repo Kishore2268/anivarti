@@ -24,9 +24,9 @@ const Amazon = () => {
           viewport={{ once: true }}
           className="logos w-full md:w-1/3 flex flex-col md:flex-row items-center justify-center mb-4 md:mb-0 order-1"
         >
-          <img src="/images/amazon-logo.webp" alt="Amazon Logo" className="sm:w-40 h-32 mr-6" />
-          <h3 className="text-white text-4xl mr-6">X</h3>
-          <img src="/images/anivarti-logo.webp" alt="Anivarti Logo" className="sm:w-32 h-32" />
+          <img src="/images/amazon-logo.webp" alt="Amazon Logo" className="sm:w-36 h-32 sm:mr-0 md:mr-6" />
+          <h3 className="text-white text-4xl sm:mr-0 md:mr-6">X</h3>
+          <img src="/images/anivarti-logo.webp" alt="Anivarti Logo" className="sm:w-36 h-32" />
         </motion.div>
 
         {/* About Content - Fade in when visible */}
