@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { ChevronDown, Menu, X } from "lucide-react"; // Lucide icons
-import clsx from "clsx"; // Utility for conditional classNames
+import { ChevronDown, ChevronUp, Menu, X } from "lucide-react";
+import clsx from "clsx"; 
 
 const sections = [
   "services",
@@ -62,6 +62,7 @@ const Header = () => {
       }
     });
 
+    console.log("Active Section:", currentSection); // Debugging
     setActiveSection(currentSection);
   }, []);
 
@@ -120,37 +121,43 @@ const Header = () => {
             <button
               onClick={toggleDropdown}
               className={clsx(
-                "flex items-center text-white text-md xl:text-lg font-medium hover:text-[#00DEFC] after:block after:h-[3px] after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform hover:after:scale-x-100",
+                "relative text-white text-md xl:text-lg font-medium pb-1.5 hover:text-[#00DEFC] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[3px] after:bg-[#00DEFC] after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100",
                 (location.pathname.startsWith("/services") ||
                   activeSection === "services") &&
                   "text-[#00DEFC] after:scale-x-100"
               )}
             >
-              Services{" "}
-              <ChevronDown className="ml-1.5 group-hover:text-white w-5 h-5" />
+              <span className="inline-flex items-center">
+                Services
+                {isDropdownOpen ? (
+                  <ChevronUp className="ml-1.5 w-5 h-5" />
+                ) : (
+                  <ChevronDown className="ml-1.5 w-5 h-5" />
+                )}
+              </span>
             </button>
 
             {/* Dropdown Menu */}
             {isDropdownOpen && (
-              <div className="absolute left-0 mt-2 w-72 bg-gray-800 shadow-lg rounded-lg overflow-hidden">
+              <div className="absolute left-0 mt-2 w-72 bg-gray-800/90 backdrop-blur-lg shadow-xl rounded-lg overflow-hidden border border-gray-700">
                 {/* 10ka Dum Services */}
                 <button
                   onClick={() => scrollToSection("services")}
-                  className="block w-full text-left px-4 py-3 text-white hover:bg-[#00DEFC]"
+                  className="block w-full text-left px-4 py-3 text-white font-medium transition-all duration-300 hover:bg-[#00DEFC] hover:text-gray-900"
                 >
-                  1.Our 10kaDum Services
+                  1. Our 10kaDum Services
                 </button>
 
                 {/* Ecommerce Management Services */}
                 <div className="border-t border-gray-700">
-                  <span className="block px-4 py-2 text-md text-white">
+                  <span className="block px-4 py-2 text-md text-white font-medium">
                     2. Ecommerce Management Services
                   </span>
                   {ecommerceLinks.map((link, index) => (
                     <React.Fragment key={link.path}>
                       <a
                         href={link.path}
-                        className="block px-4 py-3 text-white hover:bg-[#00DEFC]"
+                        className="block px-4 py-3 text-white transition-all duration-300 hover:bg-[#00DEFC] hover:text-gray-900"
                       >
                         {link.name}
                       </a>
@@ -203,7 +210,7 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-black bg-opacity-40 backdrop-blur-md shadow-lg transition-all duration-500">
+        <div className="lg:hidden bg-black backdrop-blur-md shadow-lg transition-all duration-500 absolute top-full left-0 w-full max-h-[80vh] overflow-y-auto">
           <nav className="flex flex-col items-start py-6 space-y-6 px-4">
             {/* Home */}
             <button
@@ -223,22 +230,28 @@ const Header = () => {
             <button
               onClick={toggleMobileDropdown}
               className={clsx(
-                "flex items-center text-white text-md xl:text-lg font-medium hover:text-[#00DEFC] after:block after:h-[3px] after:bg-[#00DEFC] after:origin-left after:scale-x-0 after:transition-transform hover:after:scale-x-100",
+                "relative text-white text-md xl:text-lg font-medium pb-1.5 hover:text-[#00DEFC] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[3px] after:bg-[#00DEFC] after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100",
                 (location.pathname.startsWith("/services") ||
                   activeSection === "services") &&
                   "text-[#00DEFC] after:scale-x-100"
               )}
             >
-              Services{" "}
-              <ChevronDown className="ml-1.5 group-hover:text-white w-5 h-5" />
+              <span className="inline-flex items-center">
+                Services
+                {isMobileDropdownOpen ? (
+                  <ChevronUp className="ml-1.5 w-5 h-5" />
+                ) : (
+                  <ChevronDown className="ml-1.5 w-5 h-5" />
+                )}
+              </span>
             </button>
 
             {isMobileDropdownOpen && (
-              <div className="pl-4">
-                {/* 1. Our 10ka Dum Services */}
+              <div className="mt-2 w-full bg-gray-800/90 backdrop-blur-lg shadow-xl rounded-lg overflow-hidden border border-gray-700 p-4">
+                {/* 10ka Dum Services */}
                 <button
                   onClick={() => scrollToSection("services")}
-                  className="block w-full text-left text-white text-lg font-medium py-1 hover:text-[#00DEFC]"
+                  className="block w-full text-left text-white text-lg font-medium py-3 transition-all duration-300 hover:bg-[#00DEFC] hover:text-gray-900 rounded-lg"
                 >
                   1. Our 10ka Dum Services
                 </button>
@@ -246,23 +259,24 @@ const Header = () => {
                 {/* Divider Line */}
                 <div className="border-t border-gray-700 my-2"></div>
 
-                {/* 2. Ecommerce Management Services */}
-                <span className="block text-white text-sm uppercase py-2">
-                  2. Ecommerce Management
+                {/* Ecommerce Management Services */}
+                <span className="block text-white text-lg py-2 font-medium">
+                  2. Ecommerce Management Services
                 </span>
 
-                {ecommerceLinks.map((link) => (
-                  <>
+                {ecommerceLinks.map((link, index) => (
+                  <React.Fragment key={link.path}>
                     <a
-                      key={link.path}
                       href={link.path}
-                      className="block text-white text-lg py-3 hover:text-[#00DEFC]"
+                      className="block text-white text-lg py-3 transition-all duration-300 hover:bg-[#00DEFC] hover:text-gray-900 rounded-lg"
                     >
                       {link.name}
                     </a>
-                    {/* Thin separator between links */}
-                    <div className="border-t border-gray-700"></div>
-                  </>
+                    {/* Add separator except after the last link */}
+                    {index !== ecommerceLinks.length - 1 && (
+                      <div className="border-t border-gray-700"></div>
+                    )}
+                  </React.Fragment>
                 ))}
               </div>
             )}
